@@ -5,5 +5,5 @@ export default function SelectOption({
   value: string;
   children: string;
 }) {
-  return <option className="" value={value}>{children}</option>;
+  return <option className="hover:cursor-pointer" value={value}>{children}</option>;
 }
