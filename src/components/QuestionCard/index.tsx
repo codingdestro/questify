@@ -1,8 +1,9 @@
+"use client";
 interface Props {
   heading: string;
   children: React.ReactNode;
 }
-export default function Home({ heading,children }: Props) {
+export default function Home({ heading, children }: Props) {
   return (
     <main className="px-3">
       <h1 className="text-2xl font-bold">{heading}</h1>
