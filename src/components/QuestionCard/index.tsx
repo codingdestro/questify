@@ -5,10 +5,12 @@ interface Props {
 }
 export default function Home({ heading, children }: Props) {
   return (
-    <main className="px-3">
-      <h1 className="text-2xl font-bold">{heading}</h1>
+    <main className="w-full max-w-4xl mx-auto px-4">
+      <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+        {heading}
+      </h1>
 
-      <section className="my-10 space-y-10 p-5 border rounded-lg w-4xl">
+      <section className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 space-y-8">
         {children}
       </section>
     </main>
