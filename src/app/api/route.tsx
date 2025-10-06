@@ -2,12 +2,13 @@ import OpenAI from "openai";
 
 const config = {
   task: "create a question",
-  topic: "python",
-  questions: "5",
+  topic: "javascript",
+  questions: "10",
   type: "MCQ",
-  level: "easy",
+  level: "medium",
   for: "interview preparation",
   structured: "json parsable",
+  format: "{question,options}[]",
 };
 
 const openai = new OpenAI({
@@ -23,7 +24,7 @@ export async function GET(req: Request) {
         {
           role: "system",
           content:
-            "you are an assistant for generating question sheet for interview preparation,with no answers ",
+            "you are an assistant for generating question sheet for interview preparation,with no answers,must not markdown,parsable ",
         },
         { role: "user", content: JSON.stringify(config) },
       ],
@@ -31,8 +32,7 @@ export async function GET(req: Request) {
 
     const assistantReply = response.choices[0].message.content;
     return Response.json(JSON.parse(assistantReply!));
-  } catch (err) {
-    console.error("DeepSeek API error:", err);
-    return new Response("something went wrong!");
+  } catch {
+    return Response.json({ error: "failed to generate!" }, { status: 500 });
   }
 }
