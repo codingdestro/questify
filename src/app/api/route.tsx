@@ -1,4 +1,6 @@
 import OpenAI from "openai";
+import { db } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 const config = {
   task: "create a question",
@@ -16,6 +18,30 @@ const openai = new OpenAI({
   baseURL: process.env.DEEPSEEK_BASE_URL,
 });
 
+interface IQuestionSheet {
+  topic: string;
+  questions: string;
+  type: string;
+  level: string;
+  for: string;
+  sheet: {
+    question: string;
+    options: string[];
+  }[];
+}
+
+async function addQuesetionSheet(sheet: IQuestionSheet) {
+  try {
+    const docRef = await addDoc(collection(db, "questionsheets"), {
+      ...sheet,
+      createdAt: new Date(),
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function GET(req: Request) {
   try {
     const response = await openai.chat.completions.create({
@@ -31,8 +57,18 @@ export async function GET(req: Request) {
     });
 
     const assistantReply = response.choices[0].message.content;
-    return Response.json(JSON.parse(assistantReply!));
-  } catch {
+    const parsedData = JSON.parse(assistantReply!);
+    await addQuesetionSheet({
+      topic: config.topic,
+      questions: config.questions,
+      type: config.type,
+      level: config.level,
+      for: config.for,
+      sheet: parsedData,
+    });
+    return Response.json(parsedData);
+  } catch (error) {
+    console.log(error);
     return Response.json({ error: "failed to generate!" }, { status: 500 });
   }
 }

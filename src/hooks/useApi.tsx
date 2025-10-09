@@ -18,7 +18,7 @@ export const useApi = <T = any,>(
 ): UseApiReturn<T> => {
   const [state, setState] = useState<UseApiState<T>>({
     data: null,
-    loading: true,
+    loading: false,
     error: null,
   });
 
@@ -39,10 +39,6 @@ export const useApi = <T = any,>(
       });
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, [url]); //eslint-disable-line
 
   return {
     ...state,
