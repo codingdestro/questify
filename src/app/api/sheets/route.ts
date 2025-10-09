@@ -3,20 +3,12 @@ import { collection, getDocs } from "firebase/firestore";
 export async function POST(req: Request) {
   try {
     const jsonReq = await req.json();
-    console.log(jsonReq);
-    const docRef = collection(db, "questionsheets");
-    const docSnap = await getDocs(docRef);
-    if (!docSnap.empty) {
-      const data = docSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      return new Response(JSON.stringify(data), { status: 200 });
-    } else {
-      return new Response("No such document!", { status: 404 });
-    }
+    return new Response(JSON.stringify(jsonReq), { status: 200 });
   } catch (error) {
     console.log(error);
   }
 
-  return new Response("Hello, Next.js!");
+  return Response.json({ error: "Server Error" }, { status: 500 });
 }
 
 export async function GET() {

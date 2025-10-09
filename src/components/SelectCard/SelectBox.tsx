@@ -3,10 +3,13 @@ export default function SelectBox({
   name,
   title,
   children,
+  onChangeHandler,
 }: {
   id: string;
   name: string;
   title: string;
+  onChangeHandler?: (value: string) => void;
+
   children: React.ReactNode;
 }) {
   return (
@@ -14,7 +17,12 @@ export default function SelectBox({
       <label htmlFor="topic-select">
         <span className="capitalize text-lg font-bold">{title}</span>
       </label>
-      <select id={id} name={name} className="capitalize p-2 cursor-pointer">
+      <select
+        id={id}
+        onChange={(e) => onChangeHandler && onChangeHandler(e.target.value)}
+        name={name}
+        className="capitalize p-2 cursor-pointer"
+      >
         {children}
       </select>
     </div>

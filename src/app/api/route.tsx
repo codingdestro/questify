@@ -30,6 +30,20 @@ interface IQuestionSheet {
   }[];
 }
 
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const questionConfig = { ...config, ...body };
+    await createQuestionSheet(questionConfig);
+    return new Response("Question sheet created successfully!", {
+      status: 200,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  return Response.json({ error: "Server Error" }, { status: 500 });
+}
+
 async function addQuesetionSheet(sheet: IQuestionSheet) {
   try {
     const docRef = await addDoc(collection(db, "questionsheets"), {
@@ -42,33 +56,27 @@ async function addQuesetionSheet(sheet: IQuestionSheet) {
   }
 }
 
-export async function GET(req: Request) {
-  try {
-    const response = await openai.chat.completions.create({
-      model: "deepseek-chat",
-      messages: [
-        {
-          role: "system",
-          content:
-            "you are an assistant for generating question sheet for interview preparation,with no answers,must not markdown,parsable ",
-        },
-        { role: "user", content: JSON.stringify(config) },
-      ],
-    });
+async function createQuestionSheet(conf: typeof config) {
+  const response = await openai.chat.completions.create({
+    model: "deepseek-chat",
+    messages: [
+      {
+        role: "system",
+        content:
+          "you are an assistant for generating question sheet for interview preparation,with no answers,must not markdown,parsable ",
+      },
+      { role: "user", content: JSON.stringify(conf) },
+    ],
+  });
 
-    const assistantReply = response.choices[0].message.content;
-    const parsedData = JSON.parse(assistantReply!);
-    await addQuesetionSheet({
-      topic: config.topic,
-      questions: config.questions,
-      type: config.type,
-      level: config.level,
-      for: config.for,
-      sheet: parsedData,
-    });
-    return Response.json(parsedData);
-  } catch (error) {
-    console.log(error);
-    return Response.json({ error: "failed to generate!" }, { status: 500 });
-  }
+  const assistantReply = response.choices[0].message.content;
+  const parsedData = JSON.parse(assistantReply!);
+  await addQuesetionSheet({
+    topic: conf.topic,
+    questions: conf.questions,
+    type: conf.type,
+    level: conf.level,
+    for: conf.for,
+    sheet: parsedData,
+  });
 }
