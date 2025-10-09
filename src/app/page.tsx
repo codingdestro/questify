@@ -17,7 +17,18 @@ interface IQuestionSheet {
 export default function Page() {
   const { data, loading, refetch } = useApi<{
     questions: { question: string; options: string[] }[];
-  }>("/api");
+  }>("/api", {
+    method: "post",
+    data: {
+      topic: "javascript",
+      questions: 5,
+      type: "multiple choice",
+      level: "easy",
+      for: "interview preparation",
+      structured: "json parsable",
+      format: "{question,options}[]",
+    },
+  });
 
   const {
     data: sheetdata,
