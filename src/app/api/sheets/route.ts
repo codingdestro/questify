@@ -1,5 +1,5 @@
 import { db } from "@/lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 export async function POST(req: Request) {
   try {
     const jsonReq = await req.json();
@@ -10,13 +10,22 @@ export async function POST(req: Request) {
 
   return Response.json({ error: "Server Error" }, { status: 500 });
 }
-
-export async function GET() {
+export async function GET(req: Request) {
   try {
-    const docRef = collection(db, "questionsheets");
-    const docSnap = await getDocs(docRef);
-    if (!docSnap.empty) {
-      const data = docSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    const params = new URL(req.url);
+    if (!params || !params.searchParams.get("id")) {
+      // return new Response("No ID provided", { status: 400 });
+      //fetch all documents
+      const querySnapshot = await getDocs(collection(db, "questionsheets"));
+      const allData = querySnapshot.docs.map((doc) => doc.id);
+      console.log(allData);
+      return new Response(JSON.stringify(allData), { status: 200 });
+    }
+
+    const docRef = doc(db, "questionsheets", params.searchParams.get("id")!);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const data = docSnap.data();
       return new Response(JSON.stringify(data), { status: 200 });
     } else {
       return new Response("No such document!", { status: 404 });

@@ -4,6 +4,7 @@ import SelectOption from "@/components/SelectCard/SelectOption";
 import SelectCard from "@/components/SelectCard";
 import React from "react";
 import { useApi } from "@/hooks/useApi";
+import { redirect } from "next/navigation";
 export default function Page() {
   const [config, setConfig] = React.useState({
     level: "easy",
@@ -75,7 +76,7 @@ export default function Page() {
         </SelectBox>
       </SelectCard>
       <pre>
-        {loading ? "Loading..." : data ? JSON.stringify(data, null, 2) : ""}
+        {loading ? "Loading..." : data ? redirect('/') : ""}
       </pre>
       <button
         onClick={refetch}

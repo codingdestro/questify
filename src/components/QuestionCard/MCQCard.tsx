@@ -1,16 +1,18 @@
 "use client";
 interface Props {
+  
   id: string;
+  idx:number;
   question: string;
   options: string[];
-  onClick: (id: string, answer: string) => void;
+  onClick?: (id: string, answer: string) => void;
 }
-export default function MCQCard({ id, question, options, onClick }: Props) {
+export default function MCQCard({ id, idx, question, options,  }: Props) {
   return (
     <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-      <h2 className="text-xl font-semibold text-gray-800 mb-6 leading-relaxed">
-        Q. {question}
-      </h2>
+      <p className="text-xl font-semibold text-gray-800 mb-6 leading-relaxed">
+        {idx}. {question}
+      </p>
 
       <div className="space-y-3">
         {options.map((option, index) => (
@@ -20,7 +22,7 @@ export default function MCQCard({ id, question, options, onClick }: Props) {
             className="flex items-center gap-3 p-4 rounded-lg border border-gray-200 bg-white hover:bg-blue-50 hover:border-blue-200 cursor-pointer transition-all duration-200 group"
           >
             <input
-              onChange={() => onClick(id, option)}
+              // onChange={() => onClick?.(id, option)}
               type="radio"
               id={`${id}-${index}`}
               name={id}
