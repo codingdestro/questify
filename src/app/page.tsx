@@ -2,11 +2,21 @@
 import React, { useEffect } from "react";
 import { useApi } from "@/hooks/useApi";
 import { redirect } from "next/navigation";
-import Link from "next/link";
 import SelectSheet from "@/components/SelectCard/SelectSheet";
 
+type TSheetItem = {
+  id: string;
+  type: string;
+  level: string;
+  topic: string;
+};
+
 export default function Page() {
-  const { data: sheetdata, refetch, loading } = useApi<string[]>("/api/sheets");
+  const {
+    data: sheetdata,
+    refetch,
+    loading,
+  } = useApi<TSheetItem[]>("/api/sheets");
 
   useEffect(() => {
     refetch();
@@ -31,14 +41,14 @@ export default function Page() {
           </span>
         ) : sheetdata && sheetdata.length ? (
           <div className="grid grid-cols-2 gap-5">
-            {sheetdata.map((sheet, idx) => (
+            {sheetdata.map((sheet: TSheetItem, idx) => (
               <div key={idx}>
                 <SelectSheet
-                  id={sheet}
+                  id={sheet.id}
                   heading="sample question"
-                  type="MCQ"
-                  level="easy"
-                  topic="C programming"
+                  type={sheet.type}
+                  level={sheet.level}
+                  topic={sheet.topic}
                 />{" "}
               </div>
             ))}

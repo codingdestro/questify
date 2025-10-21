@@ -39,7 +39,7 @@ export default function SelectSheet({
 
         <div className="flex items-center gap-3 w-full mt-4">
           <Link
-            href={"sheet/"+id}
+            href={"sheet/" + id}
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
           >
             Start Test

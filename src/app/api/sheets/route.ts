@@ -18,7 +18,12 @@ export async function GET(req: Request) {
       //fetch all documents
       const querySnapshot = await getDocs(collection(db, "questionsheets"));
       const allData = querySnapshot.docs.map((doc) => {
-        return doc.id;
+        return {
+          id: doc.id,
+          type: doc.data().type,
+          level: doc.data().level,
+          topic: doc.data().topic,
+        };
       });
       return new Response(JSON.stringify(allData), { status: 200 });
     }
