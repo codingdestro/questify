@@ -1,9 +1,23 @@
 "use client";
+
+import { log } from "console";
+import MCQCard from "./MCQCard";
+import React from "react";
+
 interface Props {
   heading: string;
-  children: React.ReactNode;
+  data: any; //eslint-disable-line @typescript-eslint/no-explicit-any
 }
-export default function Home({ heading, children }: Props) {
+export default function Home({ heading, data }: Props) {
+  const [selectedAnswers, setSelectedAnswers] = React.useState<{
+    [key: string]: string;
+  }>({});
+  const logData = React.useCallback((id: string, answer: string) => {
+    setSelectedAnswers((prev) => {
+      return { ...prev, [id]: answer };
+    });
+  }, []);
+
   return (
     <main className="w-full max-w-4xl mx-auto px-4">
       <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
@@ -11,7 +25,24 @@ export default function Home({ heading, children }: Props) {
       </h1>
 
       <section className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 space-y-8">
-        {children}
+        {data.sheet.map(
+          (item: { question: string; options: string[] }, index: number) => (
+            <MCQCard
+              idx={index + 1}
+              key={index}
+              id={`question-${index}`}
+              question={item.question}
+              options={item.options}
+              onClick={(id, answer) => logData(id, answer)}
+            />
+          )
+        )}
+        <button
+          className="border rounded-lg bg-blue-400 text-white px-3 py-1"
+          onClick={() => console.log(data.id, selectedAnswers)}
+        >
+          submit
+        </button>
       </section>
     </main>
   );

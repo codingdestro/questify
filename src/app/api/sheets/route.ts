@@ -17,8 +17,9 @@ export async function GET(req: Request) {
       // return new Response("No ID provided", { status: 400 });
       //fetch all documents
       const querySnapshot = await getDocs(collection(db, "questionsheets"));
-      const allData = querySnapshot.docs.map((doc) => doc.id);
-      console.log(allData);
+      const allData = querySnapshot.docs.map((doc) => {
+        return doc.id;
+      });
       return new Response(JSON.stringify(allData), { status: 200 });
     }
 
@@ -26,7 +27,9 @@ export async function GET(req: Request) {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const data = docSnap.data();
-      return new Response(JSON.stringify(data), { status: 200 });
+      return new Response(JSON.stringify({ ...data, id: docSnap.id }), {
+        status: 200,
+      });
     } else {
       return new Response("No such document!", { status: 404 });
     }

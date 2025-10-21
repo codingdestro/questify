@@ -7,7 +7,7 @@ interface Props {
   options: string[];
   onClick?: (id: string, answer: string) => void;
 }
-export default function MCQCard({ id, idx, question, options,  }: Props) {
+export default function MCQCard({ id, idx, question, options,onClick  }: Props) {
   return (
     <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
       <p className="text-xl font-semibold text-gray-800 mb-6 leading-relaxed">
@@ -22,7 +22,7 @@ export default function MCQCard({ id, idx, question, options,  }: Props) {
             className="flex items-center gap-3 p-4 rounded-lg border border-gray-200 bg-white hover:bg-blue-50 hover:border-blue-200 cursor-pointer transition-all duration-200 group"
           >
             <input
-              // onChange={() => onClick?.(id, option)}
+              onChange={() => onClick?.(id, option)}
               type="radio"
               id={`${id}-${index}`}
               name={id}
