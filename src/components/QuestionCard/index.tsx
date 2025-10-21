@@ -1,6 +1,5 @@
 "use client";
 
-import { log } from "console";
 import MCQCard from "./MCQCard";
 import React from "react";
 
