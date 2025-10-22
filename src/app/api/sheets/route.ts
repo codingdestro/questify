@@ -23,6 +23,7 @@ export async function GET(req: Request) {
           type: doc.data().type,
           level: doc.data().level,
           topic: doc.data().topic,
+          heading: doc.data().heading,
         };
       });
       return new Response(JSON.stringify(allData), { status: 200 });

@@ -9,6 +9,7 @@ type TSheetItem = {
   type: string;
   level: string;
   topic: string;
+  heading: string;
 };
 
 export default function Page() {
@@ -45,7 +46,7 @@ export default function Page() {
               <div key={idx}>
                 <SelectSheet
                   id={sheet.id}
-                  heading="sample question"
+                  heading={sheet.heading}
                   type={sheet.type}
                   level={sheet.level}
                   topic={sheet.topic}

@@ -12,6 +12,8 @@ export default function Page() {
     exam: "mix",
     quantity: "10",
   });
+
+  const [heading, setHeading] = React.useState("");
   const onChangeHandler = (key: string, value: string) => {
     setConfig((prev) => ({
       ...prev,
@@ -23,10 +25,11 @@ export default function Page() {
     method: "post",
     data: {
       ...config,
+      heading,
     },
   });
   return (
-    <main className="gap-4 max-w-4xl w-full min-h-screen mx-auto bg-slate-100 px-3 py-8">
+    <main className="gap-4 max-w-4xl w-full min-h-screen mx-auto px-3 py-8">
       <h1 className="text-center capitalize text-3xl font-semibold">
         Create Exam sheets
       </h1>
@@ -74,10 +77,15 @@ export default function Page() {
           <SelectOption value="20">20</SelectOption>
           <SelectOption value="30">30</SelectOption>
         </SelectBox>
+        <input
+          className="border rounded-lg shadow-md p-3"
+          placeholder="Enter Sheet Heading"
+          type="text"
+          value={heading}
+          onChange={(e) => setHeading(e.target.value)}
+        />
       </SelectCard>
-      <pre>
-        {loading ? "Loading..." : data ? redirect('/') : ""}
-      </pre>
+      <pre>{loading ? "Loading..." : data ? redirect("/") : ""}</pre>
       <button
         onClick={refetch}
         className="border rounded-lg shadow-md bg-blue-400 text-white p-4 capitalize font-semibold w-full cursor-pointer"

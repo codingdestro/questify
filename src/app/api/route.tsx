@@ -1,24 +1,10 @@
-import OpenAI from "openai";
 import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
-
-const config = {
-  task: "create a question",
-  topic: "javascript",
-  questions: "10",
-  type: "MCQ",
-  level: "medium",
-  for: "interview preparation",
-  structured: "json parsable",
-  format: "{question,options}[]",
-};
-
-const openai = new OpenAI({
-  apiKey: process.env.DEEPSEEK_API_KEY,
-  baseURL: process.env.DEEPSEEK_BASE_URL,
-});
+import { IConfig, config } from "@/utils/AIConfig";
+import { generateQuestionSheet } from "@/lib/deepseek";
 
 interface IQuestionSheet {
+  heading: string;
   topic: string;
   questions: string;
   type: string;
@@ -56,27 +42,15 @@ async function addQuesetionSheet(sheet: IQuestionSheet) {
   }
 }
 
-async function createQuestionSheet(conf: typeof config) {
-  const response = await openai.chat.completions.create({
-    model: "deepseek-chat",
-    messages: [
-      {
-        role: "system",
-        content:
-          "you are an assistant for generating question sheet for interview preparation,with no answers,must not markdown,parsable ",
-      },
-      { role: "user", content: JSON.stringify(conf) },
-    ],
-  });
-
-  const assistantReply = response.choices[0].message.content;
-  const parsedData = JSON.parse(assistantReply!);
+async function createQuestionSheet(conf: IConfig) {
+  const questions = await generateQuestionSheet(conf);
   await addQuesetionSheet({
     topic: conf.topic,
     questions: conf.questions,
     type: conf.type,
     level: conf.level,
     for: conf.for,
-    sheet: parsedData,
+    sheet: questions,
+    heading: conf.heading,
   });
 }
