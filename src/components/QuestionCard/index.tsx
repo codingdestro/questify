@@ -1,7 +1,7 @@
 "use client";
-
 import MCQCard from "./MCQCard";
 import React from "react";
+import axios from "axios";
 
 interface Props {
   heading: string;
@@ -16,6 +16,14 @@ export default function Home({ heading, data }: Props) {
       return { ...prev, [id]: answer };
     });
   }, []);
+
+  const handleCheckAnswer = async (question: string, answer: string) => {
+    const res = await axios.post("/api/sheets/check", {
+      question,
+      answer,
+    });
+    console.log(res.data);
+  };
 
   return (
     <main className="w-full max-w-4xl mx-auto px-4">
@@ -38,7 +46,12 @@ export default function Home({ heading, data }: Props) {
         )}
         <button
           className="border rounded-lg bg-blue-400 text-white px-3 py-1"
-          onClick={() => console.log(data.id, selectedAnswers)}
+          onClick={() =>
+            handleCheckAnswer(
+              JSON.stringify(data.sheet),
+              JSON.stringify(selectedAnswers)
+            )
+          }
         >
           submit
         </button>

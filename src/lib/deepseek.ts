@@ -22,3 +22,23 @@ export async function generateQuestionSheet(conf: IConfig) {
 
   return JSON.parse(response.content as string);
 }
+
+export async function checkAnswer(question: string, answer: string) {
+  const outputFormat = {
+    total: "number",
+    correct: "number",
+    incorrect: "number",
+    pass: "boolean",
+  };
+  const answerCheckerPrompt = [
+    new SystemMessage(
+      `you are an assistant for checking answers for interview preparation questions,respond marks assume 1 marks per question, output format should be parsable ${JSON.stringify(
+        outputFormat
+      )},`
+    ),
+    new HumanMessage(JSON.stringify({ question: question, answer: answer })),
+  ];
+  const response = await llm.invoke(answerCheckerPrompt);
+
+  return response.content;
+}
