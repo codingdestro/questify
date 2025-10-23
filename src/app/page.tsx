@@ -1,11 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import { useApi } from "@/hooks/useApi";
-import { redirect } from "next/navigation";
 import SelectSheet from "@/components/SelectCard/SelectSheet";
 import Loader from "@/components/Loader";
 import { TSheetItem } from "@/types";
-import CardGridExample from "@/components/CardGrid/CardGridExample";
 import CardGrid from "@/components/CardGrid";
 import Link from "next/link";
 
