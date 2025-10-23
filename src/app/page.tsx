@@ -5,6 +5,9 @@ import { redirect } from "next/navigation";
 import SelectSheet from "@/components/SelectCard/SelectSheet";
 import Loader from "@/components/Loader";
 import { TSheetItem } from "@/types";
+import CardGridExample from "@/components/CardGrid/CardGridExample";
+import CardGrid from "@/components/CardGrid";
+import Link from "next/link";
 
 export default function Page() {
   const {
@@ -18,25 +21,30 @@ export default function Page() {
   }, []); //eslint-disable-line
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center flex-col w-full">
-      <div className="flex items-center justify-between g-4 my-5">
-        <button
-          className="rounded-lg shadow-lg bg-green-300 capitalize  mx-auto p-4 px-8 cursor-pointer disabled:cursor-not-allowed"
-          onClick={() => redirect("/create")}
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col w-full">
+      <div className="flex justify-center items-center py-5">
+        <h1 className="text-3xl font-semibold capitalize">
+          create new question sheets
+        </h1>
+        <Link
+          href="/create"
+          className="ml-4 p-2 px-4 border rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition"
         >
-          Generate New Question Set
-        </button>
+          Create Sheet
+        </Link>
       </div>
       {/* Sheet Questions */}
-      <div className=" shadow-lg bg-white box-border rounded-lg p-5 flex gap-4 flex-col items-center justify-between  max-w-3xl w-full">
+      <div className="box-border rounded-lg p-5 flex gap-4 flex-col items-center justify-center w-full">
+        <p className="font-semibold underline mt-5 text-lg">Recent Sheets</p>
         {loading != "idle" ? (
           <Loader
             state={loading}
             size="sm"
             message="Fetching Sheets..."
+            className="bg-white rounded-lg"
           />
         ) : sheetdata && sheetdata.length ? (
-          <div className="grid grid-cols-2 gap-5">
+          <CardGrid columns={3}>
             {sheetdata.map((sheet: TSheetItem, idx) => (
               <div key={idx}>
                 <SelectSheet
@@ -45,14 +53,17 @@ export default function Page() {
                   type={sheet.type}
                   level={sheet.level}
                   topic={sheet.topic}
-                />{" "}
+                />
               </div>
             ))}
-          </div>
+          </CardGrid>
         ) : (
-          <span className="bg-red-200 text-red-500 rounded-lg w-full p-4">
-            No Sheet
-          </span>
+          <div className="bg-red-50 border border-red-200 text-red-600 rounded-lg p-6 text-center">
+            <p className="text-lg font-medium">No sheets available</p>
+            <p className="text-sm text-red-500 mt-1">
+              Create your first question sheet to get started
+            </p>
+          </div>
         )}
       </div>
     </main>

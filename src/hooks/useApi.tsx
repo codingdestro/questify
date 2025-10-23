@@ -19,7 +19,7 @@ export const useApi = <T = any,>(
 ): UseApiReturn<T> => {
   const [state, setState] = useState<UseApiState<T>>({
     data: null,
-    loading: "idle",
+    loading: "loading",
     error: null,
   });
 
