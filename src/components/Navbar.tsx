@@ -10,7 +10,9 @@ const PAGE_LINKS = [
 const Navbar = () => {
   return (
     <nav className="w-full p-4 bg-primary text-white flex justify-between items-center">
+      <Link href="//">
         <h2 className="text-2xl font-bold">Questify</h2>
+      </Link>
       <ul className="flex space-x-4 items-center">
         {PAGE_LINKS.map((link) => (
           <li key={link.name} className="hover:underline">
