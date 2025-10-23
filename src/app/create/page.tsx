@@ -5,6 +5,7 @@ import SelectCard from "@/components/SelectCard";
 import React from "react";
 import { useApi } from "@/hooks/useApi";
 import { redirect } from "next/navigation";
+import Loader from "@/components/Loader";
 export default function Page() {
   const [config, setConfig] = React.useState({
     level: "easy",
@@ -85,13 +86,17 @@ export default function Page() {
           onChange={(e) => setHeading(e.target.value)}
         />
       </SelectCard>
-      <pre>{loading ? "Loading..." : data ? redirect("/") : ""}</pre>
-      <button
-        onClick={refetch}
-        className="border rounded-lg shadow-md bg-blue-400 text-white p-4 capitalize font-semibold w-full cursor-pointer"
-      >
-        create exam sheet
-      </button>
+      <pre>{data ? redirect("/") : ""}</pre>
+      {loading !== "idle" ? (
+        <Loader state={loading} />
+      ) : (
+        <button
+          onClick={refetch}
+          className="border rounded-lg shadow-md bg-blue-400 text-white p-4 capitalize font-semibold w-full cursor-pointer"
+        >
+          create exam sheet
+        </button>
+      )}
     </main>
   );
 }

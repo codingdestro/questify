@@ -9,7 +9,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
   useEffect(() => {
     refetch();
   }, []); //eslint-disable-line
-  if (loading == "idle")
+  if (loading === "idle" && data)
     return (
       <div className="max-w-3xl mx-auto p-4">
         <QuestionCard heading="Sample Question Card" data={data}></QuestionCard>
