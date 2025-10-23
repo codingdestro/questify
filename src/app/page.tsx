@@ -3,14 +3,8 @@ import React, { useEffect } from "react";
 import { useApi } from "@/hooks/useApi";
 import { redirect } from "next/navigation";
 import SelectSheet from "@/components/SelectCard/SelectSheet";
-
-type TSheetItem = {
-  id: string;
-  type: string;
-  level: string;
-  topic: string;
-  heading: string;
-};
+import Loader from "@/components/Loader";
+import { TSheetItem } from "@/types";
 
 export default function Page() {
   const {
@@ -28,7 +22,6 @@ export default function Page() {
       <div className="flex items-center justify-between g-4 my-5">
         <button
           className="rounded-lg shadow-lg bg-green-300 capitalize  mx-auto p-4 px-8 cursor-pointer disabled:cursor-not-allowed"
-          disabled={loading}
           onClick={() => redirect("/create")}
         >
           Generate New Question Set
@@ -36,10 +29,12 @@ export default function Page() {
       </div>
       {/* Sheet Questions */}
       <div className=" shadow-lg bg-white box-border rounded-lg p-5 flex gap-4 flex-col items-center justify-between  max-w-3xl w-full">
-        {loading ? (
-          <span className="flex self-center bg-yellow-100 text-yellow-500 font-semibold border w-full rounded-lg p-2">
-            Loading...
-          </span>
+        {loading != "idle" ? (
+          <Loader
+            state={loading}
+            size="sm"
+            message="Fetching Sheets..."
+          />
         ) : sheetdata && sheetdata.length ? (
           <div className="grid grid-cols-2 gap-5">
             {sheetdata.map((sheet: TSheetItem, idx) => (
