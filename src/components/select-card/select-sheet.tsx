@@ -17,7 +17,7 @@ export default function SelectSheet({
 }: Props) {
   return (
     <main>
-      <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col w-80 aspect-square items-center justify-between">
+      <div className="bg-linear-to-br from-white to-slate-50 border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col w-80 aspect-square items-center justify-between">
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold text-slate-800 mb-4">{heading}</h1>
         </div>

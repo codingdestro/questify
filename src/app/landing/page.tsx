@@ -19,7 +19,7 @@ export default function page() {
           <Sparkles className="w-4 h-4" />
           AI-Powered Quiz Generation
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent animate-gradient">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent animate-linear">
           Master Any Topic with AI-Generated Quizzes
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -28,7 +28,7 @@ export default function page() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/home"
+            href="/signup"
             className="px-8 py-4 bg-linear-to-r from-indigo-600 to-purple-600 text-white rounded-lg text-lg font-semibold hover:shadow-2xl transform hover:-translate-y-1 transition flex items-center justify-center gap-2"
           >
             Generate Your First Quiz <ArrowRight className="w-5 h-5" />

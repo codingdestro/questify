@@ -19,7 +19,7 @@ export default function Page() {
   }, []); //eslint-disable-line
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col w-full">
+    <main className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex flex-col w-full">
       <div className="flex justify-center items-center py-5">
         <h1 className="text-3xl font-semibold capitalize">
           create new question sheets
