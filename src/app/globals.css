@@ -2,7 +2,7 @@
 
 @theme {
   /* Fresh Mint Theme Colors */
-  
+
   /* Primary Colors */
   --color-primary: teal;
   --color-primary-50: #f0fdfa;
@@ -16,7 +16,7 @@
   --color-primary-800: #115e59;
   --color-primary-900: #134e4a;
   --color-primary-950: #042f2e;
-  
+
   /* Mint Accent Colors */
   --color-mint-50: mintcream;
   --color-mint-100: #e0f9f5;
@@ -28,24 +28,24 @@
   --color-mint-700: darkcyan;
   --color-mint-800: #006666;
   --color-mint-900: #004d4d;
-  
+
   /* Background Colors */
   --color-background: mintcream;
   --color-background-secondary: lightcyan;
   --color-background-tertiary: white;
   --color-surface: white;
   --color-surface-hover: azure;
-  
+
   /* Text Colors */
   --color-foreground: #1a202c;
   --color-foreground-secondary: #2d3748;
   --color-foreground-muted: #718096;
-  
+
   /* Border Colors */
   --color-border: paleturquoise;
   --color-border-medium: mediumturquoise;
   --color-border-strong: teal;
-  
+
   /* Status Colors */
   --color-success: mediumseagreen;
   --color-success-light: lightgreen;
@@ -55,7 +55,7 @@
   --color-error-light: mistyrose;
   --color-info: steelblue;
   --color-info-light: lightblue;
-  
+
   /* Radius */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -63,7 +63,7 @@
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
   --radius-full: 9999px;
-  
+
   /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -71,7 +71,7 @@
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
-  
+
   /* Font Sizes */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -81,13 +81,16 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 128 128 / 0.05);
   --shadow: 0 4px 6px -1px rgb(0 128 128 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 128 128 / 0.1), 0 2px 4px -1px rgb(0 128 128 / 0.06);
-  --shadow-lg: 0 10px 15px -3px rgb(0 128 128 / 0.1), 0 4px 6px -2px rgb(0 128 128 / 0.05);
-  --shadow-xl: 0 20px 25px -5px rgb(0 128 128 / 0.1), 0 10px 10px -5px rgb(0 128 128 / 0.04);
+  --shadow-md: 0 4px 6px -1px rgb(0 128 128 / 0.1),
+    0 2px 4px -1px rgb(0 128 128 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(0 128 128 / 0.1),
+    0 4px 6px -2px rgb(0 128 128 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(0 128 128 / 0.1),
+    0 10px 10px -5px rgb(0 128 128 / 0.04);
   --shadow-2xl: 0 25px 50px -12px rgb(0 128 128 / 0.25);
 }
 
@@ -96,15 +99,15 @@
   .bg-mint {
     background-color: var(--color-mint-50);
   }
-  
+
   .text-mint {
     color: var(--color-mint-600);
   }
-  
+
   .border-mint {
     border-color: var(--color-border);
   }
-  
+
   .shadow-mint {
     box-shadow: var(--shadow-md);
   }
@@ -120,12 +123,12 @@
     font-weight: 500;
     transition: all 150ms ease-in-out;
   }
-  
+
   .btn-primary:hover {
     background-color: var(--color-mint-700);
     box-shadow: var(--shadow-md);
   }
-  
+
   .card-mint {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -133,7 +136,7 @@
     padding: var(--spacing-lg);
     box-shadow: var(--shadow);
   }
-  
+
   .card-mint:hover {
     background-color: var(--color-surface-hover);
     box-shadow: var(--shadow-lg);
@@ -156,13 +159,21 @@
 }
 
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
-  10%, 30%, 50%, 70%, 90% {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
     transform: translateX(-4px);
   }
-  20%, 40%, 60%, 80% {
+  20%,
+  40%,
+  60%,
+  80% {
     transform: translateX(4px);
   }
 }
@@ -173,4 +184,21 @@
 
 .animate-shake {
   animation: shake 0.5s ease-in-out;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
 }

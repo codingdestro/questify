@@ -1,25 +1,31 @@
 import Link from "next/link";
-import React from "react";
-
-const PAGE_LINKS = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
 
 const Navbar = () => {
   return (
-    <nav className="w-full p-4 bg-primary text-white flex justify-between items-center">
-      <Link href="//">
-        <h2 className="text-2xl font-bold">Questify</h2>
-      </Link>
-      <ul className="flex space-x-4 items-center">
-        {PAGE_LINKS.map((link) => (
-          <li key={link.name} className="hover:underline">
-            <Link href={link.href}>{link.name}</Link>
-          </li>
-        ))}
-      </ul>
+    <nav className="bg-gradient-to-r from-indigo-50 via-white to-purple-50 shadow-lg border-b border-gray-200">
+      <header className="container mx-auto px-4 py-6">
+        <nav className="flex items-center justify-between">
+          <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <Link href="/">
+            Questify
+            </Link>
+          </div>
+          <div className="flex gap-4">
+            <Link
+              href="/login"
+              className="px-4 py-2 text-gray-700 hover:text-indigo-600 transition"
+            >
+              Login
+            </Link>
+            <Link
+              href="/signup"
+              className="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition"
+            >
+              Get Started
+            </Link>
+          </div>
+        </nav>
+      </header>
     </nav>
   );
 };
