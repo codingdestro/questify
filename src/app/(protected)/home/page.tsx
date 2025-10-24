@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import { useApi } from "@/hooks/useApi";
-import SelectSheet from "@/components/SelectCard/SelectSheet";
-import Loader from "@/components/Loader";
+import SelectSheet from "@/components/select-card/select-sheet";
+import Loader from "@/components/loader";
 import { TSheetItem } from "@/types";
-import CardGrid from "@/components/CardGrid";
+import CardGrid from "@/components/card-grid";
 import Link from "next/link";
 
 export default function Page() {

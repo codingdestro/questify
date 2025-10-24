@@ -1,5 +1,5 @@
 "use client";
-import MCQCard from "./MCQCard";
+import MCQCard from "./mcq-card";
 import React from "react";
 import axios from "axios";
 

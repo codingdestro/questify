@@ -1,6 +1,6 @@
 "use client";
-import QuestionCard from "@/components/QuestionCard";
-import { LoaderPopUp } from "@/components/Loader/LoaderPopUp";
+import QuestionCard from "@/components/question-card";
+import { LoaderPopUp } from "@/components/loader/loader-popup";
 import { use, useEffect } from "react";
 import { useApi } from "@/hooks/useApi";
 export default function Page({ params }: { params: Promise<{ id: string }> }) {

@@ -1,11 +1,11 @@
 "use client";
-import SelectBox from "@/components/SelectCard/SelectBox";
-import SelectOption from "@/components/SelectCard/SelectOption";
-import SelectCard from "@/components/SelectCard";
+import SelectBox from "@/components/select-card/select-box";
+import SelectOption from "@/components/select-card/select-option";
+import SelectCard from "@/components/select-card";
 import React from "react";
 import { useApi } from "@/hooks/useApi";
 import { redirect } from "next/navigation";
-import Loader from "@/components/Loader";
+import Loader from "@/components/loader";
 export default function Page() {
   const [config, setConfig] = React.useState({
     level: "easy",
