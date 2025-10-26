@@ -19,21 +19,19 @@ export default function Page() {
   }, []); //eslint-disable-line
 
   return (
-    <main className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex flex-col w-full">
-      <div className="flex justify-center items-center py-5">
-        <h1 className="text-3xl font-semibold capitalize">
-          create new question sheets
-        </h1>
-        <Link
-          href="/create"
-          className="ml-4 p-2 px-4 border rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition"
-        >
-          Create Sheet
-        </Link>
-      </div>
+    <main className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex flex-col items-center w-full">
       {/* Sheet Questions */}
-      <div className="box-border rounded-lg p-5 flex gap-4 flex-col items-center justify-center w-full">
-        <p className="font-semibold underline mt-5 text-lg">Recent Sheets</p>
+      <div className="box-border rounded-lg px-5 flex gap-4 flex-col items-center justify-center w-5xl">
+        <div className="flex items-center justify-between w-full mt-2">
+          <p className="font-semibold underline text-lg">Quizzes</p>
+          <Link
+            href="/create"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm"
+          >
+            Create New Quiz
+          </Link>
+        </div>
+
         {loading != "idle" ? (
           <Loader
             state={loading}
