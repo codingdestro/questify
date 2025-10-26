@@ -16,14 +16,13 @@ export async function GET(req: Request) {
     if (!params || !params.searchParams.get("id")) {
       // return new Response("No ID provided", { status: 400 });
       //fetch all documents
-      const querySnapshot = await getDocs(collection(db, "questionsheets"));
+      const querySnapshot = await getDocs(collection(db, "mcq-questions"));
       const allData = querySnapshot.docs.map((doc) => {
         return {
           id: doc.id,
-          type: doc.data().type,
-          level: doc.data().level,
-          topic: doc.data().topic,
-          heading: doc.data().heading,
+          topic: doc.data().metadata.topic,
+          difficulty: doc.data().metadata.averageDifficulty,
+          questions: doc.data().metadata.totalQuestions,
         };
       });
       return new Response(JSON.stringify(allData), { status: 200 });
