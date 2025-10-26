@@ -11,6 +11,15 @@ export default function Page() {
   const { id } = useParams();
 
   const [questions, setQuestions] = useState<TQuestion | null>(null);
+  const formHandler = async (data: FormData) => {
+    const entries: Record<string, string> = {};
+    data.forEach((value, key) => {
+      if (typeof value === "string") {
+        entries[key] = value;
+      }
+    });
+    console.log(entries);
+  };
 
   useEffect(() => {
     async function fetchQuiz() {
@@ -29,11 +38,16 @@ export default function Page() {
   return (
     <main className="py-5">
       <div>
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            formHandler(new FormData(e.currentTarget));
+          }}
+        >
           <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6 bg-blue-50  rounded-lg shadow-md">
             {/* Quiz Title */}
             <div className="">
-              <h2 className="w-full text-2xl font-bold   pb-2">Quiz Title</h2>
+              <h2 className="w-full text-2xl font-bold   pb-2">Quiz</h2>
             </div>
 
             {/* Questions */}
@@ -62,6 +76,7 @@ export default function Page() {
                           type="radio"
                           name={`question-${questionIndex}`}
                           id={`q${questionIndex}-${option.id}`}
+                          value={option.id}
                           className="w-4 h-4 text-blue-600 cursor-pointer"
                         />
                         <label
