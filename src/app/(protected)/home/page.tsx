@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import { useApi } from "@/hooks/useApi";
-import SelectSheet from "@/components/select-card/select-sheet";
 import Loader from "@/components/loader";
 import { TSheetItem } from "@/types";
 import CardGrid from "@/components/card-grid";
@@ -45,13 +44,28 @@ export default function Page() {
           <CardGrid columns={3}>
             {sheetdata.map((sheet: TSheetItem, idx) => (
               <div key={idx}>
-                <SelectSheet
-                  id={sheet.id}
-                  heading={sheet.heading}
-                  type={sheet.type}
-                  level={sheet.level}
-                  topic={sheet.topic}
-                />
+                <Link
+                  href={`/quiz/${sheet.id}`}
+                  className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-200 hover:border-indigo-300"
+                >
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    {sheet.heading}
+                  </h3>
+                  <div className="flex flex-col gap-2 text-sm text-gray-600 mb-4">
+                    <p>
+                      <span className="font-medium">Type:</span> {sheet.type}
+                    </p>
+                    <p>
+                      <span className="font-medium">Level:</span> {sheet.level}
+                    </p>
+                    <p>
+                      <span className="font-medium">Topic:</span> {sheet.topic}
+                    </p>
+                  </div>
+                  <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                    Start Quiz
+                  </button>
+                </Link>
               </div>
             ))}
           </CardGrid>
