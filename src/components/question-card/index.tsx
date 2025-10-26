@@ -1,7 +1,9 @@
 "use client";
 import MCQCard from "./mcq-card";
 import React from "react";
-import axios from "axios";
+import ResultCard from "@/components/result-card";
+import { Loader } from "lucide-react";
+import { useApi } from "@/hooks/useApi";
 
 interface Props {
   heading: string;
@@ -11,25 +13,37 @@ export default function Home({ heading, data }: Props) {
   const [selectedAnswers, setSelectedAnswers] = React.useState<{
     [key: string]: string;
   }>({});
+  const [show, setShow] = React.useState(false);
+
+  const {
+    data: result,
+    loading: status,
+    refetch: call,
+  } = useApi("/api/sheets/check", {
+    method: "POST",
+    data: {
+      question: JSON.stringify(data.sheet),
+      answer: JSON.stringify(selectedAnswers),
+    },
+  });
   const logData = React.useCallback((id: string, answer: string) => {
     setSelectedAnswers((prev) => {
       return { ...prev, [id]: answer };
     });
   }, []);
 
-  const handleCheckAnswer = async (question: string, answer: string) => {
-    const res = await axios.post("/api/sheets/check", {
-      question,
-      answer,
-    });
-    console.log(res.data);
-  };
+  React.useEffect(() => {
+    if (status === "success") {
+      setShow(true);
+    }
+  }, [status]);
 
   return (
     <main className="w-full max-w-4xl mx-auto px-4">
       <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
         {heading}
       </h1>
+      <ResultCard data={result} state={show} onClose={() => setShow(false)} />
 
       <section className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 space-y-8">
         {data.sheet.map(
@@ -45,15 +59,16 @@ export default function Home({ heading, data }: Props) {
           )
         )}
         <button
-          className="border rounded-lg bg-blue-400 text-white px-3 py-1"
-          onClick={() =>
-            handleCheckAnswer(
-              JSON.stringify(data.sheet),
-              JSON.stringify(selectedAnswers)
-            )
-          }
+          className="border rounded-lg bg-blue-400 text-white px-3 py-2 w-full flex items-center justify-center"
+          onClick={() => (status === "loading" ? null : call())}
         >
-          submit
+          <Loader
+            className="animate-spin text-white data-[show='loading']:block hidden"
+            data-show={status}
+          />
+          <p className="data-[show='loading']:hidden" data-show={status}>
+            Submit
+          </p>
         </button>
       </section>
     </main>
