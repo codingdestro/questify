@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -6,9 +7,7 @@ const Navbar = () => {
       <header className="container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
           <div className="text-2xl font-bold bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            <Link href="/">
-            Questify
-            </Link>
+            <Link href="/">Questify</Link>
           </div>
           <div className="flex gap-4">
             <Link
