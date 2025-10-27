@@ -4,8 +4,9 @@ import { outputScheme } from "@/types/mcq-question";
 
 // {question-0: 'a', question-1: 'd', question-2: 'd', question-3: 'a', question-4: 'b', …}
 
-type answerScheme = Record<string, string>;
-type TQuiz = z.infer<typeof outputScheme>;
+export type answerScheme = Record<string, string>;
+export type TQuiz = z.infer<typeof outputScheme>;
+
 
 export async function calculateResult(docId: string, answers: answerScheme) {
   try {

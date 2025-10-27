@@ -3,7 +3,9 @@ import { useParams } from "next/navigation";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { outputScheme } from "@/types/mcq-question";
+import { TCalculateResult } from "@/types";
 import { z } from "zod";
+import ResultCard from "@/components/result-card";
 
 type TQuestion = z.infer<typeof outputScheme>;
 
@@ -11,6 +13,8 @@ export default function Page() {
   const { id } = useParams();
 
   const [questions, setQuestions] = useState<TQuestion | null>(null);
+  const [showResult, setShowResult] = useState(false);
+  const [result, setResult] = useState<TCalculateResult | null>(null);
   const formHandler = async (data: FormData) => {
     const entries: Record<string, string> = {};
     data.forEach((value, key) => {
@@ -18,9 +22,13 @@ export default function Page() {
         entries[key] = value;
       }
     });
-    console.log("calculating...")
-    const result = await axios.post(`/api/quiz/result`, { id, answers: entries });
-    console.log("Quiz Result:", result.data);
+    console.log("calculating...");
+    const result = await axios.post<TCalculateResult>(`/api/quiz/result`, {
+      id,
+      answers: entries,
+    });
+    setResult(result.data);
+    setShowResult(true);
   };
 
   useEffect(() => {
@@ -37,6 +45,22 @@ export default function Page() {
     fetchQuiz();
   }, []); //eslint-disable-line
 
+  if (showResult && result) {
+    return (
+      <ResultCard
+        totalQuestions={result.totalQuestions}
+        correctAnswers={result.correctAnswers}
+        totalMarks={result.totalMarks}
+        obtainedMarks={result.obtainedMarks}
+        result={result.result.toLowerCase() as "pass" | "fail"}
+        onClose={() => setShowResult(false)}
+        onRetry={() => {
+          setShowResult(false);
+          setResult(null);
+        }}
+      />
+    );
+  }
   return (
     <main className="py-5">
       <div>
