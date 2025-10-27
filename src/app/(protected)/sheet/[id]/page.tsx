@@ -18,7 +18,9 @@ export default function Page() {
         entries[key] = value;
       }
     });
-    console.log(entries);
+    console.log("calculating...")
+    const result = await axios.post(`/api/quiz/result`, { id, answers: entries });
+    console.log("Quiz Result:", result.data);
   };
 
   useEffect(() => {
