@@ -3,9 +3,10 @@
 import { signInWithPopup, signOut } from "firebase/auth";
 import { auth, provider } from "@/lib/firebase";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function LoginPage() {
-  const [user, setUser] = useState<any>(null); //eslint-disable-line @typescript-eslint/no-explicit-any
+  const [_, setUser] = useState<any>(null); //eslint-disable-line 
 
   const handleGoogleLogin = async () => {
     try {
@@ -22,11 +23,20 @@ export default function LoginPage() {
     setUser(null);
   };
 
+  const { user: authUser, loading } = useAuth();
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if(authUser) {
+    console.log("Authenticated User:", authUser);
+  }
+
   return (
     <div className="flex flex-col items-center mt-24 space-y-4">
-      {user ? (
+      {authUser ? (
         <>
-         <p>Welcome, {user.displayName}</p>
+          <p>Welcome, {authUser.displayName}</p>
           <button
             onClick={handleLogout}
             className="px-4 py-2 bg-red-600 text-white rounded"
