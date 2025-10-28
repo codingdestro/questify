@@ -38,7 +38,7 @@ export const StepLoading: React.FC<StepLoadingProps> = ({
   steps = defaultSteps,
   currentStep: controlledStep,
   autoAnimate = true,
-  animationDuration = 3000,
+  animationDuration = 8000,
   className = "",
 }) => {
   const [internalStep, setInternalStep] = useState(0);
@@ -52,7 +52,7 @@ export const StepLoading: React.FC<StepLoadingProps> = ({
     if (!autoAnimate || controlledStep !== undefined) return;
 
     const interval = setInterval(() => {
-      setInternalStep((prev) => (prev < steps.length - 1 ? prev + 1 : 2));
+      setInternalStep((prev) => (prev < steps.length - 1 ? prev + 1 : 3));
     }, animationDuration);
 
     return () => clearInterval(interval);
