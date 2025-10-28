@@ -10,10 +10,9 @@ export async function POST(req: Request) {
     const questions = await generateMCQQuestions(parsedInput);
     const output: z.infer<typeof outputScheme> =
       typeof questions === "string" ? JSON.parse(questions) : questions;
-    await saveQuestion(output);
-    return new Response(questions, {
+    const quizId = await saveQuestion(output);
+    return new Response(quizId, {
       status: 200,
-      headers: { "Content-Type": "application/json" },
     });
   } catch {
     return new Response("internal server error", { status: 500 });

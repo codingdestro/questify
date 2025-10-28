@@ -4,33 +4,38 @@ import { inputScheme } from "@/types/mcq-question";
 import { useActionState } from "react";
 import axios from "axios";
 import StepLoading from "@/components/loader/step-loading";
+import { useRouter } from "next/navigation";
 type TInput = z.infer<typeof inputScheme>;
-const formHandler = async (state: TInput, formdata: FormData) => {
-  const formValues: any = {}; //eslint-disable-line
-  formdata.forEach((value, key) => {
-    if (key === "subtopics" || key === "avoidTopics") {
-      formValues[key] = (value as string).split(",").map((s) => s.trim());
-    } else if (key === "numberOfQuestions") {
-      formValues[key] = Number(value);
-    } else {
-      formValues[key] = value;
-    }
-  });
 
-  try {
-    const parsedInput: TInput = inputScheme.parse(formValues);
-    console.log("Parsed Input:", parsedInput);
-    await axios.post("api/generate", parsedInput, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  } catch (error) {
-    console.log("Error generating questions:", error);
-  }
-  return state;
-};
 export default function Page() {
+  const redirect = useRouter();
+  const formHandler = async (state: TInput, formdata: FormData) => {
+    const formValues: any = {}; //eslint-disable-line
+    formdata.forEach((value, key) => {
+      if (key === "subtopics" || key === "avoidTopics") {
+        formValues[key] = (value as string).split(",").map((s) => s.trim());
+      } else if (key === "numberOfQuestions") {
+        formValues[key] = Number(value);
+      } else {
+        formValues[key] = value;
+      }
+    });
+
+    try {
+      const parsedInput: TInput = inputScheme.parse(formValues);
+      const res = await axios.post("api/generate", parsedInput, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const quizId = res.data;
+      redirect.push(`/sheet/${quizId}`);
+    } catch (error) {
+      console.log("Error generating questions:", error);
+    }
+    return state;
+  };
+
   const [state, formAction, ispending] = useActionState<TInput, FormData>(
     formHandler,
     {
