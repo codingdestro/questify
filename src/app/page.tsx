@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navbar from "@/components/navbar";
 import {
   ArrowRight,
   Sparkles,
@@ -10,6 +9,7 @@ import {
   Zap,
   Share2,
 } from "lucide-react";
+import Navbar from "@/components/navbar";
 
 export default function page() {
   return (

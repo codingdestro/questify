@@ -1,4 +1,5 @@
 "use client";
+import { SignOutButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 const LINKS = [
@@ -28,6 +29,11 @@ const Navbar = () => {
                 </Link>
               </div>
             ))}
+            <SignOutButton>
+              <button className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition text-sm">
+                Log Out
+              </button>
+            </SignOutButton>
           </div>
         </nav>
       </header>

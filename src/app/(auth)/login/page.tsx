@@ -1,57 +1,38 @@
-"use client";
+import { auth } from "@clerk/nextjs/server";
+import { SignedOut, SignUpButton, SignInButton, SignIn } from "@clerk/nextjs";
 
-import { signInWithPopup, signOut } from "firebase/auth";
-import { auth, provider } from "@/lib/firebase";
-import { useState } from "react";
-import { useAuth } from "@/hooks/useAuth";
+export default async function Page() {
+  // Use `auth()` to access `isAuthenticated` - if false, the user is not signed in
+  const { isAuthenticated } = await auth();
 
-export default function LoginPage() {
-  const [_, setUser] = useState<any>(null); //eslint-disable-line 
-
-  const handleGoogleLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      setUser(result.user);
-      console.log("User:", result.user);
-    } catch (error) {
-      console.error("Login error:", error);
-    }
-  };
-
-  const handleLogout = async () => {
-    await signOut(auth);
-    setUser(null);
-  };
-
-  const { user: authUser, loading } = useAuth();
-  if (loading) {
-    return <p>Loading...</p>;
+  // Protect the route by checking if the user is signed in
+  if (!isAuthenticated) {
+    return (
+      <SignedOut>
+        <div className="flex items-center justify-center min-h-[90vh] ">
+          <div className="w-82 rounded-lg shadow-md rouned-lg border border-gray-200 flex flex-col space-y-5 p-5">
+            <SignInButton fallbackRedirectUrl={"/home"}>
+              <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton fallbackRedirectUrl={"/home"}>
+              <button className="border border-[#6c47ff] rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </div>
+        </div>
+      </SignedOut>
+    );
   }
 
-  if(authUser) {
-    console.log("Authenticated User:", authUser);
-  }
+  // Get the Backend API User object when you need access to the user's information
 
+  // Use `user` to render user details or create UI elements
   return (
-    <div className="flex flex-col items-center mt-24 space-y-4">
-      {authUser ? (
-        <>
-          <p>Welcome, {authUser.displayName}</p>
-          <button
-            onClick={handleLogout}
-            className="px-4 py-2 bg-red-600 text-white rounded"
-          >
-            Logout
-          </button>
-        </>
-      ) : (
-        <button
-          onClick={handleGoogleLogin}
-          className="px-4 py-2 bg-blue-600 text-white rounded"
-        >
-          Sign in with Google
-        </button>
-      )}
+    <div>
+      <SignIn fallbackRedirectUrl={"/home"} routing="hash" />
     </div>
   );
 }
