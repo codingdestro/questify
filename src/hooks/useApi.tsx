@@ -15,7 +15,7 @@ interface UseApiReturn<T> extends UseApiState<T> {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useApi = <T = any,>(
   url: string,
-  options?: AxiosRequestConfig
+  options?: AxiosRequestConfig,
 ): UseApiReturn<T> => {
   const [state, setState] = useState<UseApiState<T>>({
     data: null,
