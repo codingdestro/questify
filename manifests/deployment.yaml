@@ -17,6 +17,9 @@ spec:
     spec:
       containers:
         - name: web-app
-          image: <docker-user-name>/go-web-app
+          image: codingdestro/questify
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: my-config
