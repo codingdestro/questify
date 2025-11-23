@@ -1,7 +1,7 @@
 import Dashboard from "@/components/dashboard";
 
 const dummyDashboard = {
-  username: "Anas",
+  username: "Arman Khan",
   currentMarks: 50,
   totalMarks: 100,
   streak: 2,
