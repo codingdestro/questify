@@ -23,6 +23,7 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+ENV DEEPSEeK_API_KEY=""
 
 # Next.js server uses port 3000 by default
 EXPOSE 3000
