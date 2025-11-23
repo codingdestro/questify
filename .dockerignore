@@ -1,2 +1,37 @@
-node_modules/
+# Node modules & logs
+node_modules
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+.next
+out
+dist
+
+# Environment & configs
+
+# OS / Editor files
+.DS_Store
+*.swp
+*.idea
+*.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Docker files
+Dockerfile
+docker-compose.*
+.docker
+
+# Dependencies cache
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+
+# Git & misc
+.git
+.gitignore
 
