@@ -7,14 +7,18 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const parsedInput = inputScheme.parse(body);
-    const questions = await generateMCQQuestions(parsedInput);
+    let questions = await generateMCQQuestions(parsedInput);
+    if(questions.startsWith("```json")){
+      questions = questions.replaceAll("```json", "").replaceAll("```", "").trim();
+    }
     const output: z.infer<typeof outputScheme> =
       typeof questions === "string" ? JSON.parse(questions) : questions;
     const quizId = await saveQuestion(output);
     return new Response(quizId, {
       status: 200,
     });
-  } catch {
+  } catch (err) {
+    console.log(err);
     return new Response("internal server error", { status: 500 });
   }
 }
