@@ -5,6 +5,31 @@ import { inputScheme, outputScheme } from "@/types/mcq-question";
 import { saveQuestion } from "@/utils/firestore/saveQuestion";
 import { JSONPrompt } from "@/utils/prompt";
 
+/**
+ * Extract a valid JSON object from potentially noisy LLM output.
+ * Handles markdown fences, trailing commas, truncation, and leading text.
+ */
+function extractJSON(raw: string): string {
+  let s = raw.trim();
+
+  // Strip markdown code fences (```json ... ``` or ``` ... ```)
+  s = s.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+
+  // Find the outermost { ... } block
+  const firstBrace = s.indexOf("{");
+  const lastBrace = s.lastIndexOf("}");
+  if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
+    throw new Error("No JSON object found in LLM output");
+  }
+
+  let json = s.slice(firstBrace, lastBrace + 1);
+
+  // Remove trailing commas before closing braces/brackets (common LLM mistake)
+  json = json.replace(/,(\s*[}\]])/g, "$1");
+
+  return json;
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -23,9 +48,7 @@ export async function POST(req: Request) {
     ];
 
     const stream = await llm.stream(messages);
-
     const encoder = new TextEncoder();
-
     let accumulated = "";
 
     const readable = new ReadableStream({
@@ -37,17 +60,11 @@ export async function POST(req: Request) {
             controller.enqueue(encoder.encode(text));
           }
 
-          // Clean markdown fences
-          let clean = accumulated;
-          if (clean.startsWith("```json")) {
-            clean = clean.replace("```json", "").replace(/```$/, "").trim();
-          }
+          const clean = extractJSON(accumulated);
+          const parsed = JSON.parse(clean);
+          const output: z.infer<typeof outputScheme> = outputScheme.parse(parsed);
 
-          // Parse and save
-          const output: z.infer<typeof outputScheme> = JSON.parse(clean);
           const quizId = await saveQuestion(output, parsedInput.topic, parsedInput.difficulty);
-
-          // Send the quiz ID as the final message
           controller.enqueue(encoder.encode(`\n__QUIZ_ID__:${quizId}`));
           controller.close();
         } catch (err) {
