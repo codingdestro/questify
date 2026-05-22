@@ -18,20 +18,19 @@ interface StepLoadingProps {
 const defaultSteps: Step[] = [
   {
     id: "analyzing",
-    label: "Analyzing request",
-    description: "Processing your input...",
+    label: "AI is thinking",
+    description: "Analyzing your request...",
   },
   {
     id: "generating",
-    label: "Generating content",
-    description: "AI is creating your content...",
+    label: "Generating questions",
+    description: "Streaming AI response in real-time...",
   },
   {
-    id: "refining",
-    label: "Refining results",
-    description: "Polishing the output...",
+    id: "finalizing",
+    label: "Finalizing",
+    description: "Saving your quiz...",
   },
-  { id: "finalizing", label: "Finalizing", description: "Almost done..." },
 ];
 
 export const StepLoading: React.FC<StepLoadingProps> = ({
@@ -52,7 +51,7 @@ export const StepLoading: React.FC<StepLoadingProps> = ({
     if (!autoAnimate || controlledStep !== undefined) return;
 
     const interval = setInterval(() => {
-      setInternalStep((prev) => (prev < steps.length - 1 ? prev + 1 : 3));
+      setInternalStep((prev) => (prev < steps.length - 1 ? prev + 1 : prev));
     }, animationDuration);
 
     return () => clearInterval(interval);
@@ -91,16 +90,16 @@ export const StepLoading: React.FC<StepLoadingProps> = ({
               {/* Step indicator */}
               <div className="shrink-0 mt-0.5">
                 {isCompleted ? (
-                  <div className="w-7 h-7 rounded-full bg-linear-to-br from-green-400 to-green-600 flex items-center justify-center shadow-md animate-in zoom-in duration-300">
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-md animate-in zoom-in duration-300">
                     <Check className="w-4 h-4 text-white" strokeWidth={3} />
                   </div>
                 ) : isActive ? (
-                  <div className="w-7 h-7 rounded-full bg-linear-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-lg">
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center shadow-lg">
                     <Loader2 className="w-4 h-4 text-white animate-spin" />
                   </div>
                 ) : (
-                  <div className="w-7 h-7 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center bg-white dark:bg-gray-800">
-                    <Clock className="w-3.5 h-3.5 text-gray-400" />
+                  <div className="w-7 h-7 rounded-full border-2 border-border flex items-center justify-center bg-surface">
+                    <Clock className="w-3.5 h-3.5 text-foreground-muted" />
                   </div>
                 )}
               </div>
@@ -110,10 +109,10 @@ export const StepLoading: React.FC<StepLoadingProps> = ({
                 <h3
                   className={`font-semibold text-sm transition-colors duration-300 ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400"
+                      ? "text-primary-600"
                       : isCompleted
-                      ? "text-gray-700 dark:text-gray-300"
-                      : "text-gray-400 dark:text-gray-500"
+                      ? "text-foreground"
+                      : "text-foreground-muted"
                   }`}
                 >
                   {step.label}
@@ -127,8 +126,8 @@ export const StepLoading: React.FC<StepLoadingProps> = ({
                   <p
                     className={`text-xs mt-1 transition-colors duration-300 ${
                       isActive
-                        ? "text-gray-600 dark:text-gray-400"
-                        : "text-gray-400 dark:text-gray-500"
+                        ? "text-foreground-muted"
+                        : "text-foreground-muted/60"
                     }`}
                   >
                     {step.description}

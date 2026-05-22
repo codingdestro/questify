@@ -1,0 +1,200 @@
+{
+  "questions": [
+    {
+      "id": "q1_mcq_001",
+      "type": "mcq",
+      "question": "What is the base of the Python number system?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Binary (base 10)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Decimal (base 10)",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Hexadecimal (base 16)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Octal (base 8)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Basics",
+      "explanation": "Python uses the decimal number system, which has a base of 10.",
+      "tags": [
+        "python",
+        "number system",
+        "decimal"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q2_mcq_002",
+      "type": "mcq",
+      "question": "What is the result of the expression 2 ** 3 in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "5",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "6",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "8",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "9",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Operators",
+      "explanation": "The ** operator in Python is used for exponentiation. So, 2 ** 3 is equal to 2^3, which is 8.",
+      "tags": [
+        "python",
+        "operators",
+        "exponentiation"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q3_mcq_003",
+      "type": "mcq",
+      "question": "What is the purpose of the abs() function in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To return the square root of a number",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To return the absolute value of a number",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To return the maximum value in a list",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To return the minimum value in a list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Functions",
+      "explanation": "The abs() function in Python returns the absolute value of a number, which is the distance of the number from zero on the number line.",
+      "tags": [
+        "python",
+        "functions",
+        "absolute value"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q4_mcq_004",
+      "type": "mcq",
+      "question": "What is the result of the expression 10 % 3 in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "2",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "3",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "d",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Operators",
+      "explanation": "The % operator in Python is used for modulus operation, which returns the remainder of the division of the dividend by the divisor. So, 10 % 3 is equal to 1.",
+      "tags": [
+        "python",
+        "operators",
+        "modulus"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q5_mcq_005",
+      "type": "mcq",
+      "question": "What is the purpose of the round() function in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To return the square root of a number",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To return the absolute value of a number",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To return the maximum value in a list",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To round a number to the nearest integer or to a given number of decimals",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "d",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Functions",
+      "explanation": "The round() function in Python is used to round a number to the nearest integer or to a given number of decimals.",
+      "tags": [
+        "python",
+        "functions",
+        "rounding"
+      ],
+      "estimatedTime": 30
+    }
+  ],
+  "metadata": {
+    "totalQuestions": 5,
+    "generatedAt": "2026-05-22T16:15:36.491Z",
+    "topic": "python",
+    "averageDifficulty": "easy"
+  }
+}

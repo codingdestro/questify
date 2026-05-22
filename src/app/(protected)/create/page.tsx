@@ -1,16 +1,24 @@
 "use client";
 import { z } from "zod";
 import { inputScheme } from "@/types/mcq-question";
-import { useActionState } from "react";
-import axios from "axios";
-import StepLoading from "@/components/loader/step-loading";
+import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import StepLoading from "@/components/loader/step-loading";
 import { Sparkles, BookOpen, Layers, Brain, Users, X } from "lucide-react";
 type TInput = z.infer<typeof inputScheme>;
 
+type FormState = "idle" | "loading" | "error";
+
 export default function Page() {
   const redirect = useRouter();
-  const formHandler = async (state: TInput, formdata: FormData) => {
+  const [formState, setFormState] = useState<FormState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [streamedChars, setStreamedChars] = useState(0);
+
+  const formHandler = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formdata = new FormData(e.currentTarget);
+
     const formValues: Record<string, unknown> = {};
     formdata.forEach((value, key) => {
       if (key === "subtopics" || key === "avoidTopics") {
@@ -24,30 +32,52 @@ export default function Page() {
 
     try {
       const parsedInput: TInput = inputScheme.parse(formValues);
-      const res = await axios.post("api/generate", parsedInput, {
+      setFormState("loading");
+      setStreamedChars(0);
+      setErrorMessage("");
+
+      const res = await fetch("/api/generate", {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(parsedInput),
       });
-      const quizId = res.data;
-      redirect.push(`/sheet/${quizId}`);
+
+      if (!res.ok || !res.body) {
+        throw new Error("Failed to generate quiz");
+      }
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const text = decoder.decode(value, { stream: true });
+        buffer += text;
+        setStreamedChars(buffer.length);
+      }
+
+      // Extract quiz ID from the last line
+      const quizIdMatch = buffer.match(/__QUIZ_ID__:(.+)$/m);
+      if (quizIdMatch) {
+        redirect.push(`/sheet/${quizIdMatch[1].trim()}`);
+      } else {
+        throw new Error("Failed to get quiz ID from stream");
+      }
     } catch (error) {
       console.log("Error generating questions:", error);
+      setFormState("error");
+      setErrorMessage(error instanceof Error ? error.message : "An error occurred");
     }
-    return state;
-  };
+  }, [redirect]);
 
-  const [state, formAction, ispending] = useActionState<TInput, FormData>(
-    formHandler,
-    {
-      topic: "",
-      subtopics: [],
-      numberOfQuestions: 5,
-      difficulty: "easy",
-      questionStyle: "recall",
-      targetAudience: "",
-      avoidTopics: [],
-      additionalContext: "",
-    }
-  );
+  const currentStep = streamedChars === 0
+    ? 0
+    : streamedChars < 200
+    ? 1
+    : 2;
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 py-10 px-4">
@@ -67,10 +97,13 @@ export default function Page() {
         </div>
 
         <div className="card-mint">
-          {ispending ? (
-            <StepLoading autoAnimate={true} animationDuration={4000} />
+          {formState === "loading" ? (
+            <StepLoading
+              autoAnimate={false}
+              currentStep={currentStep}
+            />
           ) : (
-            <form className="flex flex-col gap-5" action={formAction}>
+            <form className="flex flex-col gap-5" onSubmit={formHandler}>
               {/* Topic */}
               <div>
                 <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
@@ -101,7 +134,7 @@ export default function Page() {
                 />
               </div>
 
-              {/* Number & Difficulty row */}
+              {/* Number & Difficulty */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
@@ -112,7 +145,7 @@ export default function Page() {
                     placeholder="5"
                     required
                     name="numberOfQuestions"
-                    defaultValue={state.numberOfQuestions}
+                    defaultValue={5}
                     min={1}
                     max={100}
                     className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground"
@@ -125,7 +158,7 @@ export default function Page() {
                   <select
                     name="difficulty"
                     required
-                    defaultValue={state.difficulty}
+                    defaultValue="easy"
                     className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground"
                   >
                     <option value="easy">Easy</option>
@@ -135,7 +168,7 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Question Style & Audience row */}
+              {/* Style & Audience */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
@@ -144,7 +177,7 @@ export default function Page() {
                   </label>
                   <select
                     name="questionStyle"
-                    defaultValue={state.questionStyle}
+                    defaultValue="recall"
                     className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground"
                   >
                     <option value="recall">Recall</option>
@@ -194,13 +227,18 @@ export default function Page() {
                 />
               </div>
 
+              {formState === "error" && (
+                <div className="bg-error-light text-error px-4 py-3 rounded-lg text-sm">
+                  {errorMessage}
+                </div>
+              )}
+
               {/* Submit */}
               <button
-                className="btn-primary w-full text-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={ispending}
+                className="btn-primary w-full text-center cursor-pointer disabled:opacity-50"
                 type="submit"
               >
-                {ispending ? "Generating..." : "✨ Generate Questions"}
+                ✨ Generate Questions
               </button>
             </form>
           )}
