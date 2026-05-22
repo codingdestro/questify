@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-mint-50 via-white to-mint-100">
+      <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100">
         {/* Hero */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full mb-6 text-sm font-semibold">
@@ -38,7 +38,7 @@ export default function Page() {
             </Link>
             <Link
               href="/demo"
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary-400 text-primary-600 rounded-xl text-lg font-semibold hover:bg-mint-50 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary-400 text-primary-600 rounded-xl text-lg font-semibold hover:bg-sky-50 transition-all"
             >
               See How It Works
             </Link>

@@ -56,7 +56,7 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-mint-50 via-white to-mint-100 py-8 px-4">
+    <main className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 py-8 px-4">
       {showResult && result && (
         <ResultCard
           totalQuestions={result.totalQuestions}
@@ -124,7 +124,7 @@ export default function Page() {
                       <label
                         key={option.id}
                         htmlFor={`q${questionIndex}-${option.id}`}
-                        className="flex items-center gap-3 p-3 rounded-lg border border-border hover:border-primary-300 hover:bg-mint-50 transition-all cursor-pointer group"
+                        className="flex items-center gap-3 p-3 rounded-lg border border-border hover:border-primary-300 hover:bg-sky-50 transition-all cursor-pointer group"
                       >
                         <span className="shrink-0 w-7 h-7 rounded-full border-2 border-border group-hover:border-primary-400 flex items-center justify-center text-xs font-semibold text-foreground-muted group-hover:text-primary-600 transition-colors">
                           {["a", "b", "c", "d"][optionIndex]}

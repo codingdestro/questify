@@ -48,7 +48,7 @@ export default function ResultCard({
               : "Better luck next time!"}
           </p>
 
-          <div className="space-y-3 rounded-lg bg-mint-50 p-4">
+          <div className="space-y-3 rounded-lg bg-sky-50 p-4">
             <div className="flex justify-between">
               <span className="text-foreground-muted">Total Questions:</span>
               <span className="font-semibold text-foreground">

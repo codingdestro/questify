@@ -50,7 +50,7 @@ export default function Page() {
   );
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-mint-50 via-white to-mint-100 py-10 px-4">
+    <main className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 py-10 px-4">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">

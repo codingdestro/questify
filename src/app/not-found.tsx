@@ -9,7 +9,7 @@ export default function Page() {
           <h1 className="text-9xl mb-8 font-bold text-gray-200 dark:text-gray-700">
             404
           </h1>
-          <div className="text-6xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-purple-600 -mt-8">
+          <div className="text-6xl font-bold text-transparent bg-clip-text bg-linear-to-r from-sky-600 to-primary-600 -mt-8">
             Oops!
           </div>
         </div>
@@ -25,7 +25,7 @@ export default function Page() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-linear-to-r from-sky-600 to-primary-600 hover:from-sky-700 hover:to-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             Go Home
           </Link>
