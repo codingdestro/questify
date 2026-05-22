@@ -25,7 +25,13 @@ function extractJSON(raw: string): string {
   let json = s.slice(firstBrace, lastBrace + 1);
 
   // Remove trailing commas before closing braces/brackets (common LLM mistake)
-  json = json.replace(/,(\s*[}\]])/g, "$1");
+  json = json.replace(/,\s*([}\]])/g, "$1");
+
+  // Fix missing commas between array elements: } { or }{
+  json = json.replace(/}\s*{/g, "},{");
+
+  // Fix missing commas between object and array start: ] {
+  json = json.replace(/]\s*{/g, "],{");
 
   return json;
 }
