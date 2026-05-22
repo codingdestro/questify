@@ -8,12 +8,12 @@ export async function POST(req: Request) {
     const body = await req.json();
     const parsedInput = inputScheme.parse(body);
     let questions = await generateMCQQuestions(parsedInput);
-    if(questions.startsWith("```json")){
+    if (questions.startsWith("```json")) {
       questions = questions.replaceAll("```json", "").replaceAll("```", "").trim();
     }
     const output: z.infer<typeof outputScheme> =
       typeof questions === "string" ? JSON.parse(questions) : questions;
-    const quizId = await saveQuestion(output);
+    const quizId = await saveQuestion(output, parsedInput.topic, parsedInput.difficulty);
     return new Response(quizId, {
       status: 200,
     });

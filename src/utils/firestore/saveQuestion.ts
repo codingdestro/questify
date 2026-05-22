@@ -1,16 +1,28 @@
 import { z } from "zod";
 import { outputScheme } from "@/types/mcq-question";
-import { db } from "@/lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { saveDoc, generateId } from "@/lib/storage";
+import { computeAverageDifficulty } from "./difficulty";
 
 export async function saveQuestion(
-  questionData: z.infer<typeof outputScheme>
+  questionData: z.infer<typeof outputScheme>,
+  topic?: string,
+  difficulty?: string
 ): Promise<string> {
   try {
-    const docRef = await addDoc(collection(db, "mcq-questions"), questionData);
-    return docRef.id;
+    const id = generateId();
+    const data = {
+      ...questionData,
+      metadata: {
+        ...questionData.metadata,
+        topic: topic || "unknown",
+        averageDifficulty: difficulty || computeAverageDifficulty(questionData.questions),
+        generatedAt: new Date().toISOString(),
+      },
+    };
+    saveDoc(id, data);
+    return id;
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.error("Error saving document: ", e);
     throw e;
   }
 }

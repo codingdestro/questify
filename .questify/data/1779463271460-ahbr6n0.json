@@ -1,0 +1,200 @@
+{
+  "questions": [
+    {
+      "id": "q1_mcq_001",
+      "type": "mcq",
+      "question": "What is the primary method to create a new array in JavaScript?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Using the Array constructor",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Using the Object.create method",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Using the JSON.parse method",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Using the eval function",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "JavaScript Arrays",
+      "explanation": "The Array constructor is the primary method to create a new array in JavaScript. It can be used with or without the new keyword, and it can take multiple arguments to populate the array.",
+      "tags": [
+        "javascript",
+        "arrays",
+        "array-constructor"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q2_mcq_002",
+      "type": "mcq",
+      "question": "What is the purpose of the Array.prototype.push method?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To remove the last element from an array",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To add one or more elements to the end of an array",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To sort the elements of an array",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To reverse the order of the elements in an array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "JavaScript Arrays",
+      "explanation": "The Array.prototype.push method is used to add one or more elements to the end of an array. It returns the new length of the array.",
+      "tags": [
+        "javascript",
+        "arrays",
+        "push-method"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q3_mcq_003",
+      "type": "mcq",
+      "question": "What is the purpose of the Array.prototype.indexOf method?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To find the index of the first occurrence of a specified value in an array",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To find the index of the last occurrence of a specified value in an array",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To find the value of the first occurrence of a specified index in an array",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To find the value of the last occurrence of a specified index in an array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "JavaScript Arrays",
+      "explanation": "The Array.prototype.indexOf method is used to find the index of the first occurrence of a specified value in an array. It returns -1 if the value is not found.",
+      "tags": [
+        "javascript",
+        "arrays",
+        "indexof-method"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q4_mcq_004",
+      "type": "mcq",
+      "question": "What is the purpose of the Array.prototype.slice method?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To extract a section of an array and return it as a new array",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To extract a section of an array and return it as a string",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To extract a section of an array and return it as an object",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To extract a section of an array and return it as a number",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "JavaScript Arrays",
+      "explanation": "The Array.prototype.slice method is used to extract a section of an array and return it as a new array. It does not modify the original array.",
+      "tags": [
+        "javascript",
+        "arrays",
+        "slice-method"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q5_mcq_005",
+      "type": "mcq",
+      "question": "What is the purpose of the Array.prototype.splice method?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To add or remove elements from an array",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To sort the elements of an array",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To reverse the order of the elements in an array",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To find the index of the first occurrence of a specified value in an array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "JavaScript Arrays",
+      "explanation": "The Array.prototype.splice method is used to add or remove elements from an array. It returns an array of the removed elements.",
+      "tags": [
+        "javascript",
+        "arrays",
+        "splice-method"
+      ],
+      "estimatedTime": 30
+    }
+  ],
+  "metadata": {
+    "totalQuestions": 5,
+    "generatedAt": "2026-05-22T15:21:11.460Z",
+    "topic": "javascript",
+    "averageDifficulty": "easy"
+  }
+}
