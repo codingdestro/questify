@@ -65,28 +65,41 @@ export async function POST(req: Request) {
               controller.enqueue(encoder.encode(text));
             }
 
-            // Extract JSON
-            let clean = accumulated.trim();
-            clean = clean.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-            const firstBrace = clean.indexOf("{");
-            const lastBrace = clean.lastIndexOf("}");
-            if (firstBrace !== -1 && lastBrace > firstBrace) {
-              let json = clean.slice(firstBrace, lastBrace + 1);
-              json = json.replace(/,\s*([}\]])/g, "$1");
-              json = json.replace(/}\s*{/g, "},{");
-              const parsed = JSON.parse(json);
-              const validated = outputScheme.parse(parsed);
+            // Extract JSON — progressive fallback scanning
+            let s2 = accumulated.trim();
+            s2 = s2.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+            const firstBrace2 = s2.indexOf("{");
+            if (firstBrace2 !== -1) {
+              const start2 = s2.slice(firstBrace2);
+              let lastBrace2 = start2.lastIndexOf("}");
+              let parsed = null;
 
-              const quizId = await saveQuestion(
-                Object.assign(
-                  validated,
-                  { metadata: { ...validated.metadata, topic: parsedInput.topic, averageDifficulty: parsedInput.difficulty, generatedAt: new Date().toISOString() } },
-                ),
-                parsedInput.topic,
-                parsedInput.difficulty,
-              );
+              while (lastBrace2 > 0 && !parsed) {
+                let candidate = start2.slice(0, lastBrace2 + 1);
+                candidate = candidate.replace(/,\s*([}\]])/g, "$1");
+                candidate = candidate.replace(/}\s*{/g, "},{");
+                candidate = candidate.replace(/:\s*([}\]])/g, ": null$1");
+                try {
+                  parsed = JSON.parse(candidate);
+                } catch {
+                  lastBrace2 = start2.lastIndexOf("}", lastBrace2 - 1);
+                }
+              }
 
-              controller.enqueue(encoder.encode(`\n__QUIZ_ID__:${quizId}`));
+              if (parsed) {
+                const validated = outputScheme.parse(parsed);
+
+                const quizId = await saveQuestion(
+                  Object.assign(
+                    validated,
+                    { metadata: { ...validated.metadata, topic: parsedInput.topic, averageDifficulty: parsedInput.difficulty, generatedAt: new Date().toISOString() } },
+                  ),
+                  parsedInput.topic,
+                  parsedInput.difficulty,
+                );
+
+                controller.enqueue(encoder.encode(`\n__QUIZ_ID__:${quizId}`));
+              }
             }
           } catch {
             // fallback failed too — just send generic error

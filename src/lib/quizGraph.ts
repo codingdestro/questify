@@ -51,20 +51,40 @@ function dedupQuestions(questions: Question[]): Question[] {
 
 /**
  * Extract a valid JSON object from potentially noisy LLM output.
+ * Tries progressively shorter slices from the first { until parse succeeds.
  */
 function extractJSON(raw: string): string {
   let s = raw.trim();
+  // Strip markdown code fences
   s = s.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+
   const firstBrace = s.indexOf("{");
-  const lastBrace = s.lastIndexOf("}");
-  if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
-    throw new Error("No JSON object found in LLM output");
+  if (firstBrace === -1) throw new Error("No JSON object found in LLM output");
+
+  const start = s.slice(firstBrace);
+
+  // Try full string first, then progressively shorter
+  let lastBrace = start.lastIndexOf("}");
+  while (lastBrace > 0) {
+    let candidate = start.slice(0, lastBrace + 1);
+
+    // Apply common fixes before each attempt
+    candidate = candidate.replace(/,\s*([}\]])/g, "$1");
+    candidate = candidate.replace(/}\s*{/g, "},{");
+    candidate = candidate.replace(/]\s*{/g, "],{");
+    // Remove trailing colon (e.g. "key": value: -> "key": value)
+    candidate = candidate.replace(/:\s*([}\]])/g, ": null$1");
+
+    try {
+      JSON.parse(candidate);
+      return candidate;
+    } catch {
+      // Move to next closing brace
+      lastBrace = start.lastIndexOf("}", lastBrace - 1);
+    }
   }
-  let json = s.slice(firstBrace, lastBrace + 1);
-  json = json.replace(/,\s*([}\]])/g, "$1");
-  json = json.replace(/}\s*{/g, "},{");
-  json = json.replace(/]\s*{/g, "],{");
-  return json;
+
+  throw new Error("No valid JSON object found in LLM output");
 }
 
 /**
