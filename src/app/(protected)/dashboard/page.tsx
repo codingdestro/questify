@@ -7,23 +7,23 @@ const dummyDashboard = {
   streak: 2,
   levels: [
     {
-        name: "Beginner",
-        currentMarks: 20,
-        totalMarks: 30,
-        isCompleted: true,
-    }
+      name: "Beginner",
+      currentMarks: 20,
+      totalMarks: 30,
+      isCompleted: true,
+    },
   ],
   revisionHistory: [
     {
-        id: "1",
-        question: "What is React?",
-        isCorrect: true,
-        timestamp: new Date(),
-   }
+      id: "1",
+      question: "What is React?",
+      isCorrect: true,
+      timestamp: new Date(),
+    },
   ],
 };
 
-export default function page() {
+export default function Page() {
   return (
     <Dashboard
       currentMarks={dummyDashboard.currentMarks}

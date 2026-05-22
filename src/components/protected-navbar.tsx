@@ -10,23 +10,24 @@ const LINKS = [
 
 const Navbar = () => {
   return (
-    <nav className="bg-linear-to-r from-indigo-50 via-white to-purple-50 shadow-lg border-b border-gray-200">
-      <header className="container mx-auto px-4 py-6">
+    <nav className="bg-surface border-b border-border shadow-sm">
+      <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <nav className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            <Link href="/">Questify</Link>
-          </div>
-          <div className="flex items-center gap-2">
+          <Link
+            href="/"
+            className="text-2xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent"
+          >
+            Questify
+          </Link>
+          <div className="flex items-center gap-1">
             {LINKS.map(({ href, label }) => (
-              <div key={href}>
-                <Link
-                  key={href}
-                  href={href}
-                  className="px-4 py-2 text-gray-700 hover:text-indigo-600 transition text-sm"
-                >
-                  {label}
-                </Link>
-              </div>
+              <Link
+                key={href}
+                href={href}
+                className="px-3 py-2 text-foreground-muted hover:text-primary-600 hover:bg-mint-50 rounded-lg transition-all text-sm font-medium"
+              >
+                {label}
+              </Link>
             ))}
           </div>
         </nav>
