@@ -1,80 +1,99 @@
 import { z } from "zod";
-import { llm } from "@/lib/deepseek";
-import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 import { inputScheme, outputScheme } from "@/types/mcq-question";
+import { generateAllQuestions } from "@/lib/quizGraph";
 import { saveQuestion } from "@/utils/firestore/saveQuestion";
-import { JSONPrompt } from "@/utils/prompt";
-
-/**
- * Extract a valid JSON object from potentially noisy LLM output.
- * Handles markdown fences, trailing commas, truncation, and leading text.
- */
-function extractJSON(raw: string): string {
-  let s = raw.trim();
-
-  // Strip markdown code fences (```json ... ``` or ``` ... ```)
-  s = s.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-
-  // Find the outermost { ... } block
-  const firstBrace = s.indexOf("{");
-  const lastBrace = s.lastIndexOf("}");
-  if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
-    throw new Error("No JSON object found in LLM output");
-  }
-
-  let json = s.slice(firstBrace, lastBrace + 1);
-
-  // Remove trailing commas before closing braces/brackets (common LLM mistake)
-  json = json.replace(/,\s*([}\]])/g, "$1");
-
-  // Fix missing commas between array elements: } { or }{
-  json = json.replace(/}\s*{/g, "},{");
-
-  // Fix missing commas between object and array start: ] {
-  json = json.replace(/]\s*{/g, "],{");
-
-  return json;
-}
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const parsedInput = inputScheme.parse(body);
 
-    const prompt = {
-      ...JSONPrompt,
-      input: { ...parsedInput },
-    };
-
-    const messages = [
-      new SystemMessage(
-        "you are an expert quiz question generator that outputs valid json only"
-      ),
-      new HumanMessage(JSON.stringify(prompt)),
-    ];
-
-    const stream = await llm.stream(messages);
     const encoder = new TextEncoder();
-    let accumulated = "";
+    const total = parsedInput.numberOfQuestions;
+    const batchSize = 10;
+    const batchCount = Math.ceil(total / batchSize);
 
     const readable = new ReadableStream({
       async start(controller) {
         try {
-          for await (const chunk of stream) {
-            const text = typeof chunk.content === "string" ? chunk.content : "";
-            accumulated += text;
-            controller.enqueue(encoder.encode(text));
-          }
+          // Send start event
+          controller.enqueue(encoder.encode(`__BATCH_COUNT__:${batchCount}\n`));
 
-          const clean = extractJSON(accumulated);
-          const parsed = JSON.parse(clean);
-          const output: z.infer<typeof outputScheme> = outputScheme.parse(parsed);
+          const result = await generateAllQuestions(parsedInput, (done, totalBatches) => {
+            controller.enqueue(encoder.encode(`__BATCH_PROGRESS__:${done}:${totalBatches}\n`));
+          });
 
-          const quizId = await saveQuestion(output, parsedInput.topic, parsedInput.difficulty);
-          controller.enqueue(encoder.encode(`\n__QUIZ_ID__:${quizId}`));
+          // Build full output matching outputScheme
+          const output: z.infer<typeof outputScheme> = {
+            questions: result.questions,
+            metadata: {
+              totalQuestions: result.metadata.totalQuestions,
+            },
+          };
+
+          const quizId = await saveQuestion(
+            { ...output, metadata: { ...output.metadata, ...result.metadata } },
+            parsedInput.topic,
+            parsedInput.difficulty,
+          );
+
+          controller.enqueue(encoder.encode(`__DONE__\n`));
+          controller.enqueue(encoder.encode(`__QUIZ_ID__:${quizId}`));
           controller.close();
         } catch (err) {
-          controller.error(err);
+          console.error("Stream error:", err);
+          const msg = err instanceof Error ? err.message : "Unknown error";
+          controller.enqueue(encoder.encode(`__ERROR__:${msg}\n`));
+
+          // Try a fallback single-LLM call for small batches
+          try {
+            const { llm } = await import("@/lib/deepseek");
+            const { HumanMessage, SystemMessage } = await import("@langchain/core/messages");
+            const { JSONPrompt } = await import("@/utils/prompt");
+
+            const prompt = { ...JSONPrompt, input: { ...parsedInput } };
+            const messages = [
+              new SystemMessage("you are an expert quiz question generator that outputs valid json only"),
+              new HumanMessage(JSON.stringify(prompt)),
+            ];
+
+            const stream = await llm.stream(messages);
+            let accumulated = "";
+            for await (const chunk of stream) {
+              const text = typeof chunk.content === "string" ? chunk.content : "";
+              accumulated += text;
+              controller.enqueue(encoder.encode(text));
+            }
+
+            // Extract JSON
+            let clean = accumulated.trim();
+            clean = clean.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+            const firstBrace = clean.indexOf("{");
+            const lastBrace = clean.lastIndexOf("}");
+            if (firstBrace !== -1 && lastBrace > firstBrace) {
+              let json = clean.slice(firstBrace, lastBrace + 1);
+              json = json.replace(/,\s*([}\]])/g, "$1");
+              json = json.replace(/}\s*{/g, "},{");
+              const parsed = JSON.parse(json);
+              const validated = outputScheme.parse(parsed);
+
+              const quizId = await saveQuestion(
+                Object.assign(
+                  validated,
+                  { metadata: { ...validated.metadata, topic: parsedInput.topic, averageDifficulty: parsedInput.difficulty, generatedAt: new Date().toISOString() } },
+                ),
+                parsedInput.topic,
+                parsedInput.difficulty,
+              );
+
+              controller.enqueue(encoder.encode(`\n__QUIZ_ID__:${quizId}`));
+            }
+          } catch {
+            // fallback failed too — just send generic error
+            controller.enqueue(encoder.encode(`\n__ERROR__:Generation failed after multiple attempts`));
+          }
+
+          controller.close();
         }
       },
     });

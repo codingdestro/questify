@@ -13,7 +13,7 @@ export default function Page() {
   const redirect = useRouter();
   const [formState, setFormState] = useState<FormState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [streamedChars, setStreamedChars] = useState(0);
+  const [batchProgress, setBatchProgress] = useState<{ done: number; total: number } | null>(null);
 
   const formHandler = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ export default function Page() {
     try {
       const parsedInput: TInput = inputScheme.parse(formValues);
       setFormState("loading");
-      setStreamedChars(0);
+      setBatchProgress(null);
       setErrorMessage("");
 
       const res = await fetch("/api/generate", {
@@ -56,13 +56,21 @@ export default function Page() {
 
         const text = decoder.decode(value, { stream: true });
         buffer += text;
-        setStreamedChars(buffer.length);
+
+        // Parse event lines
+        const batchMatch = buffer.match(/__BATCH_PROGRESS__:(\d+):(\d+)/);
+        if (batchMatch) {
+          setBatchProgress({ done: parseInt(batchMatch[1]), total: parseInt(batchMatch[2]) });
+        }
       }
 
       // Extract quiz ID from the last line
       const quizIdMatch = buffer.match(/__QUIZ_ID__:(.+)$/m);
       if (quizIdMatch) {
         redirect.push(`/sheet/${quizIdMatch[1].trim()}`);
+      } else if (buffer.includes("__ERROR__")) {
+        const errMatch = buffer.match(/__ERROR__:(.+)/);
+        throw new Error(errMatch?.[1] || "Generation failed");
       } else {
         throw new Error("Failed to get quiz ID from stream");
       }
@@ -73,9 +81,9 @@ export default function Page() {
     }
   }, [redirect]);
 
-  const currentStep = streamedChars === 0
+  const currentStep = !batchProgress
     ? 0
-    : streamedChars < 200
+    : batchProgress.done < batchProgress.total
     ? 1
     : 2;
 
