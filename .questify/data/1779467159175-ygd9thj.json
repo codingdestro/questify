@@ -1,0 +1,199 @@
+{
+  "questions": [
+    {
+      "id": "q1_mcq_001",
+      "type": "mcq",
+      "question": "What is the primary data structure in Python that is ordered and immutable?",
+      "options": [
+        {
+          "id": "a",
+          "text": "List",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Dictionary",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Set",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "basic python",
+      "explanation": "A tuple in Python is an ordered and immutable collection of values that can be of any data type, including strings, integers, floats, and other tuples.",
+      "tags": [
+        "python",
+        "tuple",
+        "data structure"
+      ],
+      "estimatedTime": 20
+    },
+    {
+      "id": "q2_mcq_002",
+      "type": "mcq",
+      "question": "Which operator is used to assign a value to a variable in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": ":",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "=",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "+",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "-",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "basic python",
+      "explanation": "The assignment operator (=) is used to assign a value to a variable in Python. For example, x = 5 assigns the value 5 to the variable x.",
+      "tags": [
+        "python",
+        "assignment operator"
+      ],
+      "estimatedTime": 20
+    },
+    {
+      "id": "q3_mcq_003",
+      "type": "mcq",
+      "question": "What is the purpose of the def keyword in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To create a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To create a function",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To create a class",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To create a module",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "basic python",
+      "explanation": "The def keyword in Python is used to define a function. For example, def greet(): print('Hello') defines a function named greet that prints 'Hello' when called.",
+      "tags": [
+        "python",
+        "function",
+        "def keyword"
+      ],
+      "estimatedTime": 20
+    },
+    {
+      "id": "q4_mcq_004",
+      "type": "mcq",
+      "question": "What is the difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A list is ordered and a tuple is unordered",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "A list is mutable and a tuple is immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "A list is immutable and a tuple is mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "A list is unordered and a tuple is ordered",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "basic python",
+      "explanation": "The main difference between a list and a tuple in Python is that a list is mutable, meaning it can be changed after creation, while a tuple is immutable, meaning it cannot be changed after creation.",
+      "tags": [
+        "python",
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q5_mcq_005",
+      "type": "mcq",
+      "question": "What is the purpose of the len() function in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To get the type of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To get the length of a sequence",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "To get the memory address of a variable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "basic python",
+      "explanation": "The len() function in Python returns the number of items in a sequence, such as a string, list, or tuple. For example, len('hello') returns 5, which is the number of characters in the string 'hello'.",
+      "tags": [
+        "python",
+        "len function",
+        "sequence"
+      ],
+      "estimatedTime": 20
+    }
+  ],
+  "metadata": {
+    "totalQuestions": 5,
+    "topic": "basic python",
+    "averageDifficulty": "easy",
+    "generatedAt": "2026-05-22T16:25:59.175Z"
+  }
+}

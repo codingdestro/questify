@@ -1,41 +1,32 @@
 "use client";
-import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import ProtectedNavbar from "@/components/protected-navbar";
+
 const Navbar = () => {
-  const { isSignedIn } = useUser();
-
-  // Use `isLoaded` to check if Clerk is loaded
-
-  // Use `isSignedIn` to protect the content
-  if (!isSignedIn)
-    return (
-      <nav className="bg-linear-to-r from-indigo-50 via-white to-purple-50 shadow-lg border-b border-gray-200">
-        <header className="container mx-auto px-4 py-6">
-          <nav className="flex items-center justify-between">
-            <div className="text-2xl font-bold bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              <Link href="/">Questify</Link>
-            </div>
-            <div className="flex gap-4">
-              <Link
-                href="/login"
-                className="px-4 py-2 text-gray-700 hover:text-indigo-600 transition"
-              >
-                Login
-              </Link>
-              <Link
-                href="/signup"
-                className="px-6 py-2 bg-linear-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition"
-              >
-                Get Started
-              </Link>
-            </div>
-          </nav>
-        </header>
-      </nav>
-    );
-
-  return <ProtectedNavbar />;
+  return (
+    <nav className="bg-surface border-b border-border shadow-sm">
+      <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav className="flex items-center justify-between">
+          <Link
+            href="/"
+            className="text-2xl font-bold bg-linear-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent"
+          >
+            Questify
+          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/home"
+              className="px-4 py-2 text-foreground-muted hover:text-primary-600 transition text-sm font-medium"
+            >
+              Get Started
+            </Link>
+            <Link href="/create" className="btn-primary text-sm">
+              Create Quiz
+            </Link>
+          </div>
+        </nav>
+      </header>
+    </nav>
+  );
 };
 
 export default Navbar;

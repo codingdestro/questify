@@ -1,0 +1,200 @@
+{
+  "questions": [
+    {
+      "id": "q1_mcq_001",
+      "type": "mcq",
+      "question": "What is the primary data structure used in Python to store a collection of elements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tuples",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Lists",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Dictionaries",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Sets",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Arrays",
+      "explanation": "In Python, lists are the primary data structure used to store a collection of elements. They are ordered, mutable, and can store elements of different data types.",
+      "tags": [
+        "python",
+        "arrays",
+        "lists"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q2_mcq_002",
+      "type": "mcq",
+      "question": "How do you create an empty list in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "list = []",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "list = ()",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "list = {}",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "list = <>",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Arrays",
+      "explanation": "In Python, you can create an empty list using the syntax list = []. This creates a new, empty list.",
+      "tags": [
+        "python",
+        "arrays",
+        "lists"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q3_mcq_003",
+      "type": "mcq",
+      "question": "What is the purpose of the index in a Python list?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To store the length of the list",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To access specific elements in the list",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To modify the list",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To sort the list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Arrays",
+      "explanation": "In Python, the index is used to access specific elements in a list. The index is a numerical value that represents the position of an element in the list.",
+      "tags": [
+        "python",
+        "arrays",
+        "lists"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q4_mcq_004",
+      "type": "mcq",
+      "question": "How do you append an element to the end of a list in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "list.append(element)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "list.add(element)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "list.insert(element)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "list.extend(element)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Arrays",
+      "explanation": "In Python, you can append an element to the end of a list using the append() method. This method adds the specified element to the end of the list.",
+      "tags": [
+        "python",
+        "arrays",
+        "lists"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q5_mcq_005",
+      "type": "mcq",
+      "question": "What is the result of indexing a list with a negative index in Python?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It raises an error",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "It returns the first element of the list",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "It returns the last element of the list",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "It returns the second last element of the list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c",
+      "points": 10,
+      "difficulty": "easy",
+      "category": "Python Arrays",
+      "explanation": "In Python, when you index a list with a negative index, it counts from the end of the list. For example, -1 refers to the last element, -2 refers to the second last element, and so on.",
+      "tags": [
+        "python",
+        "arrays",
+        "lists"
+      ],
+      "estimatedTime": 30
+    }
+  ],
+  "metadata": {
+    "totalQuestions": 5,
+    "generatedAt": "2026-05-22T16:20:43.695Z",
+    "topic": "python",
+    "averageDifficulty": "easy"
+  }
+}

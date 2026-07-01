@@ -1,0 +1,3649 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is the primary difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Lists are mutable, tuples are immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "Lists are immutable, tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "Lists can only contain strings, tuples can contain any data type",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "Tuples can only contain integers, lists can contain any data type",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "Lists are mutable, tuples are immutable",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, lists are mutable, meaning they can be modified after creation, whereas tuples are immutable, meaning they cannot be modified after creation.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'def' keyword in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To define a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To define a function",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To define a class",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To define a module",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To define a function",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'def' keyword in Python is used to define a function.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is the difference between the 'is' and '==' operators in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "'is' checks for identity, '==' checks for equality",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "'is' checks for equality, '==' checks for identity",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "'is' is used for lists, '==' is used for tuples",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "'is' is used for tuples, '==' is used for lists",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "'is' checks for identity, '==' checks for equality",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'is' operator checks if two variables refer to the same object in memory, while the '==' operator checks if the values of two variables are equal.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'return' statement in a Python function?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To exit the function and return a value",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To enter the function and return a value",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To define a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To define a class",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To exit the function and return a value",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'return' statement in a Python function is used to exit the function and return a value to the caller.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What is the difference between a list and a dictionary in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Lists are ordered, dictionaries are unordered",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "Lists are unordered, dictionaries are ordered",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "Lists can only contain strings, dictionaries can only contain integers",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "Lists can only contain integers, dictionaries can only contain strings",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "Lists are ordered, dictionaries are unordered",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, lists are ordered collections of items, whereas dictionaries are unordered collections of key-value pairs.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len()' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To get the length of a string",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To get the length of a list",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To get the length of a dictionary",
+          "isCorrect": true
+        },
+        {
+          "id": "o4",
+          "text": "To get the length of a function",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To get the length of a string, list, or dictionary",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'len()' function in Python is used to get the length of a string, list, or dictionary.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "What is the difference between the 'and' and 'or' operators in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "'and' returns True if both conditions are True, 'or' returns True if either condition is True",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "'and' returns True if either condition is True, 'or' returns True if both conditions are True",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "'and' is used for lists, 'or' is used for tuples",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "'and' is used for tuples, 'or' is used for lists",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "'and' returns True if both conditions are True, 'or' returns True if either condition is True",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'and' operator returns True if both conditions are True, while the 'or' operator returns True if either condition is True.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "What is the purpose of the 'in' operator in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To check if a value is in a list or string",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To check if a value is in a dictionary",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To check if a value is in a function",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To check if a value is in a class",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To check if a value is in a list, string, or dictionary",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'in' operator in Python is used to check if a value is present in a list, string, or dictionary.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "What is the purpose of the 'not' operator in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To negate a boolean value",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To negate a numeric value",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To negate a string value",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To negate a list value",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To negate a boolean value",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'not' operator in Python is used to negate a boolean value, i.e., to change True to False and False to True.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "What is the difference between the 'del' and 'remove' methods in Python lists?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "'del' removes an element by index, 'remove' removes an element by value",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "'del' removes an element by value, 'remove' removes an element by index",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "'del' is used for tuples, 'remove' is used for lists",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "'del' is used for lists, 'remove' is used for tuples",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "'del' removes an element by index, 'remove' removes an element by value",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'del' method is used to remove an element from a list by its index, while the 'remove' method is used to remove an element from a list by its value.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is the primary difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Lists are immutable, while tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "Lists are mutable, while tuples are immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "Lists can only contain integers, while tuples can contain any data type",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "Lists are faster than tuples",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "Lists are mutable, while tuples are immutable",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, lists are mutable, meaning they can be changed after creation, while tuples are immutable, meaning they cannot be changed after creation.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'return' statement in a Python function?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To exit the function and return control to the caller",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To declare a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To import a module",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To raise an exception",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To exit the function and return control to the caller",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'return' statement is used to exit a function and return control to the caller, optionally passing back a value.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 + 3 * 2' in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "14",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "11",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "16",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "20",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "11",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '5 + 3 * 2' is evaluated as follows: first, the multiplication '3 * 2' is evaluated to 6, then the addition '5 + 6' is evaluated to 11.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len()' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To get the length of a string",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To get the length of a list",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To get the length of a tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "o4",
+          "text": "To get the length of a dictionary",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "To get the length of a sequence (string, list, tuple)",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'len()' function is used to get the length of a sequence (string, list, tuple, dictionary).",
+      "tags": [
+        "list",
+        "tuple",
+        "string"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What is the difference between the 'is' and '==' operators in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "'is' checks for equality, while '==' checks for identity",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "'is' checks for identity, while '==' checks for equality",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "'is' is used for lists, while '==' is used for tuples",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "'is' is used for strings, while '==' is used for integers",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "'is' checks for identity, while '==' checks for equality",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'is' operator checks if two objects are the same object in memory (identity), while the '==' operator checks if two objects have the same value (equality).",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What is the purpose of the 'sorted()' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To sort a list in ascending order",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To sort a list in descending order",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To reverse a list",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To shuffle a list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To sort a list (or other iterable) in ascending order",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'sorted()' function is used to sort a list (or other iterable) in ascending order. It returns a new sorted list and leaves the original list unchanged.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "What is the purpose of the 'enumerate()' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To get the index and value of each item in a list",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To get the length of a list",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To sort a list",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To reverse a list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To get the index and value of each item in a list (or other iterable)",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'enumerate()' function is used to get the index and value of each item in a list (or other iterable). It returns an iterator that produces tuples containing the index and value of each item.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "What is the purpose of the 'zip()' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To combine two lists into a list of tuples",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To combine two lists into a single list",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To sort two lists",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To reverse two lists",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To combine two lists (or other iterables) into a list of tuples",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'zip()' function is used to combine two lists (or other iterables) into a list of tuples, where the first item in each tuple comes from the first list, the second item comes from the second list, and so on.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "What is the purpose of the 'any()' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To check if all items in a list are true",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To check if any item in a list is true",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To check if a list is empty",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To check if a list is sorted",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To check if any item in a list (or other iterable) is true",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'any()' function is used to check if any item in a list (or other iterable) is true. It returns True if at least one item is true, and False otherwise.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'all()' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To check if any item in a list is true",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To check if all items in a list are true",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To check if a list is empty",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To check if a list is sorted",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To check if all items in a list (or other iterable) are true",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'all()' function is used to check if all items in a list (or other iterable) are true. It returns True if all items are true, and False otherwise.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is the primary difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Lists are immutable, tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "Lists are mutable, tuples are immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "Lists are used for strings, tuples are used for integers",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "Lists are used for integers, tuples are used for strings",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "Lists are mutable, tuples are immutable",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, lists are mutable, meaning they can be modified after creation, while tuples are immutable, meaning they cannot be modified after creation.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'def' keyword in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To define a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To define a function",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To define a loop",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To define a conditional statement",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To define a function",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'def' keyword is used to define a function.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 + 3 * 2' in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "11",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "14",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "13",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "16",
+          "isCorrect": false
+        },
+        {
+          "id": "o5",
+          "text": "11",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "11",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '5 + 3 * 2' is evaluated as follows: first, the multiplication '3 * 2' is evaluated to 6, then the addition '5 + 6' is evaluated to 11.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'in' operator in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To check if a value is in a list",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To check if a value is in a tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To check if a value is in a dictionary",
+          "isCorrect": true
+        },
+        {
+          "id": "o4",
+          "text": "To check if a value is in a set",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "To check if a value is in a list, tuple, dictionary, or set",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'in' operator is used to check if a value is in a list, tuple, dictionary, or set.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What is the result of the expression '[1, 2, 3] + [4, 5, 6]' in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "[1, 2, 3, 4, 5, 6]",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "[1, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "[4, 5, 6]",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "[1, 2, 3, 4, 5]",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "[1, 2, 3, 4, 5, 6]",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '[1, 2, 3] + [4, 5, 6]' is evaluated as follows: the two lists are concatenated, resulting in the list '[1, 2, 3, 4, 5, 6]'.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What is the result of the expression '(1, 2, 3) + (4, 5, 6)' in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "(1, 2, 3, 4, 5, 6)",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "(1, 2, 3)",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "(4, 5, 6)",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "(1, 2, 3, 4, 5)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "(1, 2, 3, 4, 5, 6)",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '(1, 2, 3) + (4, 5, 6)' is evaluated as follows: the two tuples are concatenated, resulting in the tuple '(1, 2, 3, 4, 5, 6)'.",
+      "tags": [
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To get the length of a list",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To get the length of a tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To get the length of a dictionary",
+          "isCorrect": true
+        },
+        {
+          "id": "o4",
+          "text": "To get the length of a set",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "To get the length of a list, tuple, dictionary, or set",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'len' function is used to get the length of a list, tuple, dictionary, or set.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 % 3' in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "2",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "3",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "4",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "2",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '5 % 3' is evaluated as follows: the remainder of the division '5 / 3' is 2.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "What is the purpose of the 'range' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To generate a sequence of numbers",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To generate a sequence of characters",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To generate a sequence of strings",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To generate a sequence of lists",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To generate a sequence of numbers",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'range' function is used to generate a sequence of numbers.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "What is the result of the expression '[1, 2, 3][1]' in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "2",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "3",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "4",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "2",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '[1, 2, 3][1]' is evaluated as follows: the element at index 1 of the list '[1, 2, 3]' is 2.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "1",
+      "type": "mcq",
+      "question": "What is the difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A list is mutable, while a tuple is immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "A list is immutable, while a tuple is mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "A list can only contain strings, while a tuple can only contain integers",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "A list can only contain integers, while a tuple can only contain strings",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, a list is a mutable collection of items, while a tuple is an immutable collection of items. This means that a list can be modified after it is created, while a tuple cannot be modified.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'return' statement in a Python function?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To exit the function and return a value to the caller",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To enter a new function and return a value to the caller",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To define a new variable and return a value to the caller",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To print a message to the console and return a value to the caller",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'return' statement in a Python function is used to exit the function and return a value to the caller. This allows the function to provide a result to the code that called it.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "3",
+      "type": "mcq",
+      "question": "What is the difference between the '==' and 'is' operators in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The '==' operator checks for equality, while the 'is' operator checks for identity",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "The '==' operator checks for identity, while the 'is' operator checks for equality",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "The '==' operator checks for type, while the 'is' operator checks for value",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "The '==' operator checks for value, while the 'is' operator checks for type",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the '==' operator checks for equality, which means it checks if the values of two objects are equal. The 'is' operator, on the other hand, checks for identity, which means it checks if two objects are the same object in memory.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To get the length of a string, list, or tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To get the length of a dictionary or set",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To get the length of a function or class",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To get the length of a variable or constant",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'len()' function in Python is used to get the length of a string, list, or tuple. It returns the number of items in the object.",
+      "tags": [
+        "list",
+        "tuple",
+        "string"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "5",
+      "type": "mcq",
+      "question": "What is the difference between a 'for' loop and a 'while' loop in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A 'for' loop is used to iterate over a sequence, while a 'while' loop is used to repeat a block of code",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "A 'for' loop is used to repeat a block of code, while a 'while' loop is used to iterate over a sequence",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "A 'for' loop is used to define a new variable, while a 'while' loop is used to print a message",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "A 'for' loop is used to exit a function, while a 'while' loop is used to enter a new function",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, a 'for' loop is used to iterate over a sequence, such as a list or string, and execute a block of code for each item in the sequence. A 'while' loop, on the other hand, is used to repeat a block of code as long as a certain condition is true.",
+      "tags": [
+        "control structures"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "6",
+      "type": "mcq",
+      "question": "What is the purpose of the 'range()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To generate a sequence of numbers",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To generate a sequence of strings",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To generate a sequence of lists",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To generate a sequence of dictionaries",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'range()' function in Python is used to generate a sequence of numbers. It returns an iterator that produces a sequence of numbers, starting from a specified start value, stopping before a specified stop value, and incrementing by a specified step value.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "7",
+      "type": "mcq",
+      "question": "What is the difference between the 'append()' and 'extend()' methods in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The 'append()' method adds a single item to the end of a list, while the 'extend()' method adds multiple items to the end of a list",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "The 'append()' method adds multiple items to the end of a list, while the 'extend()' method adds a single item to the end of a list",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "The 'append()' method adds an item to the beginning of a list, while the 'extend()' method adds an item to the end of a list",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "The 'append()' method adds an item to the end of a list, while the 'extend()' method adds an item to the beginning of a list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'append()' method is used to add a single item to the end of a list. The 'extend()' method, on the other hand, is used to add multiple items to the end of a list.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "8",
+      "type": "mcq",
+      "question": "What is the purpose of the 'zip()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To iterate over two or more lists in parallel",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To iterate over a single list",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To iterate over a dictionary",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To iterate over a set",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'zip()' function in Python is used to iterate over two or more lists in parallel. It returns an iterator that produces tuples, where the first item in each tuple is from the first list, the second item is from the second list, and so on.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "9",
+      "type": "mcq",
+      "question": "What is the difference between the 'sorted()' and 'sort()' functions in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The 'sorted()' function returns a new sorted list, while the 'sort()' function sorts the original list in place",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "The 'sorted()' function sorts the original list in place, while the 'sort()' function returns a new sorted list",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "The 'sorted()' function is used to sort strings, while the 'sort()' function is used to sort numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "The 'sorted()' function is used to sort lists, while the 'sort()' function is used to sort dictionaries",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'sorted()' function returns a new sorted list, leaving the original list unchanged. The 'sort()' function, on the other hand, sorts the original list in place, meaning it modifies the original list.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'enumerate()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To iterate over a list and have access to the index and value of each item",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To iterate over a dictionary and have access to the key and value of each item",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To iterate over a set and have access to the value of each item",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To iterate over a string and have access to the character of each item",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'enumerate()' function in Python is used to iterate over a list and have access to the index and value of each item. It returns an iterator that produces tuples, where the first item in each tuple is the index and the second item is the value.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is the primary difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Lists are mutable, tuples are immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "Lists are immutable, tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "Lists can only contain strings, tuples can contain any data type",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "Lists are used for loops, tuples are used for conditional statements",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "Lists are mutable, tuples are immutable",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, lists are mutable, meaning they can be modified after creation, while tuples are immutable, meaning they cannot be modified after creation.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'def' keyword in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To define a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To define a function",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To define a loop",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To define a conditional statement",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To define a function",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'def' keyword is used to define a function.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is the difference between the '==' and 'is' operators in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "'==' checks for equality, 'is' checks for identity",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "'==' checks for identity, 'is' checks for equality",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "'==' checks for type, 'is' checks for value",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "'==' checks for value, 'is' checks for type",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "'==' checks for equality, 'is' checks for identity",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the '==' operator checks for equality, while the 'is' operator checks for identity.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'append' method in Python lists?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To add an element to the beginning of the list",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To add an element to the end of the list",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To remove an element from the list",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To sort the list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To add an element to the end of the list",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'append' method is used to add an element to the end of a list.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What is the purpose of the 'sort' method in Python lists?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To add an element to the list",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To remove an element from the list",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To sort the list in ascending order",
+          "isCorrect": true
+        },
+        {
+          "id": "o4",
+          "text": "To reverse the list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To sort the list in ascending order",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'sort' method is used to sort a list in ascending order.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To get the type of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To get the length of a string or list",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To get the index of a variable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To get the length of a string or list",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'len' function is used to get the length of a string or list.",
+      "tags": [
+        "list",
+        "string"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "What is the purpose of the 'index' method in Python lists?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To get the value of an element at a specific index",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To get the index of a specific element",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To add an element to the list",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To remove an element from the list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To get the index of a specific element",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'index' method is used to get the index of a specific element in a list.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "What is the purpose of the 'count' method in Python lists?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To get the length of the list",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To get the index of a specific element",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To get the number of occurrences of a specific element",
+          "isCorrect": true
+        },
+        {
+          "id": "o4",
+          "text": "To add an element to the list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To get the number of occurrences of a specific element",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'count' method is used to get the number of occurrences of a specific element in a list.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "What is the purpose of the 'tuple' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To create a list",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To create a dictionary",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To create a tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "o4",
+          "text": "To create a set",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To create a tuple",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'tuple' function is used to create a tuple.",
+      "tags": [
+        "tuple"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'zip' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To concatenate two lists",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To create a dictionary from two lists",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To iterate over two lists in parallel",
+          "isCorrect": true
+        },
+        {
+          "id": "o4",
+          "text": "To sort two lists",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To iterate over two lists in parallel",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'zip' function is used to iterate over two lists in parallel.",
+      "tags": [
+        "list",
+        "iteration"
+      ],
+      "estimatedTime": 2
+    },
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What is the difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "A1",
+          "text": "A list is mutable, while a tuple is immutable.",
+          "isCorrect": true
+        },
+        {
+          "id": "A2",
+          "text": "A list is immutable, while a tuple is mutable.",
+          "isCorrect": false
+        },
+        {
+          "id": "A3",
+          "text": "A list can only contain integers, while a tuple can contain any data type.",
+          "isCorrect": false
+        },
+        {
+          "id": "A4",
+          "text": "A list is used for sorting, while a tuple is used for indexing.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A1",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "list, tuple",
+      "explanation": "In Python, a list is a mutable data structure, meaning it can be modified after creation, while a tuple is an immutable data structure, meaning it cannot be modified after creation.",
+      "tags": [
+        "list",
+        "tuple",
+        "data structures"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'def' keyword in Python?",
+      "options": [
+        {
+          "id": "B1",
+          "text": "To define a variable.",
+          "isCorrect": false
+        },
+        {
+          "id": "B2",
+          "text": "To define a function.",
+          "isCorrect": true
+        },
+        {
+          "id": "B3",
+          "text": "To define a class.",
+          "isCorrect": false
+        },
+        {
+          "id": "B4",
+          "text": "To define a module.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B2",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "functions",
+      "explanation": "In Python, the 'def' keyword is used to define a function, which is a block of code that can be executed multiple times from different parts of a program.",
+      "tags": [
+        "functions",
+        "def"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 ** 2' in Python?",
+      "options": [
+        {
+          "id": "C1",
+          "text": "25",
+          "isCorrect": true
+        },
+        {
+          "id": "C2",
+          "text": "10",
+          "isCorrect": false
+        },
+        {
+          "id": "C3",
+          "text": "15",
+          "isCorrect": false
+        },
+        {
+          "id": "C4",
+          "text": "20",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "C1",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "operators",
+      "explanation": "In Python, the '**' operator is used for exponentiation. Therefore, '5 ** 2' equals 25.",
+      "tags": [
+        "operators",
+        "exponentiation"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'return' statement in a Python function?",
+      "options": [
+        {
+          "id": "D1",
+          "text": "To exit a loop.",
+          "isCorrect": false
+        },
+        {
+          "id": "D2",
+          "text": "To exit a function and return a value to the caller.",
+          "isCorrect": true
+        },
+        {
+          "id": "D3",
+          "text": "To define a variable.",
+          "isCorrect": false
+        },
+        {
+          "id": "D4",
+          "text": "To import a module.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "D2",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "functions",
+      "explanation": "In Python, the 'return' statement is used to exit a function and return a value to the caller.",
+      "tags": [
+        "functions",
+        "return"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "question": "What is the result of the expression '[1, 2, 3] + [4, 5, 6]' in Python?",
+      "options": [
+        {
+          "id": "E1",
+          "text": "[1, 2, 3, 4, 5, 6]",
+          "isCorrect": true
+        },
+        {
+          "id": "E2",
+          "text": "[1, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "E3",
+          "text": "[4, 5, 6]",
+          "isCorrect": false
+        },
+        {
+          "id": "E4",
+          "text": "[1, 2, 3, 4, 5]",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "E1",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "list",
+      "explanation": "In Python, the '+' operator can be used to concatenate lists. Therefore, '[1, 2, 3] + [4, 5, 6]' equals '[1, 2, 3, 4, 5, 6]'.",
+      "tags": [
+        "list",
+        "concatenation"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len()' function in Python?",
+      "options": [
+        {
+          "id": "F1",
+          "text": "To get the length of a string or a list.",
+          "isCorrect": true
+        },
+        {
+          "id": "F2",
+          "text": "To get the length of a tuple.",
+          "isCorrect": false
+        },
+        {
+          "id": "F3",
+          "text": "To get the length of a dictionary.",
+          "isCorrect": false
+        },
+        {
+          "id": "F4",
+          "text": "To get the length of a set.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "F1",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "functions",
+      "explanation": "In Python, the 'len()' function can be used to get the length of a string, a list, a tuple, a dictionary, or a set.",
+      "tags": [
+        "functions",
+        "len()"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "What is the result of the expression '(1, 2, 3) + (4, 5, 6)' in Python?",
+      "options": [
+        {
+          "id": "G1",
+          "text": "(1, 2, 3, 4, 5, 6)",
+          "isCorrect": true
+        },
+        {
+          "id": "G2",
+          "text": "(1, 2, 3)",
+          "isCorrect": false
+        },
+        {
+          "id": "G3",
+          "text": "(4, 5, 6)",
+          "isCorrect": false
+        },
+        {
+          "id": "G4",
+          "text": "(1, 2, 3, 4, 5)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "G1",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "tuple",
+      "explanation": "In Python, the '+' operator can be used to concatenate tuples. Therefore, '(1, 2, 3) + (4, 5, 6)' equals '(1, 2, 3, 4, 5, 6)'.",
+      "tags": [
+        "tuple",
+        "concatenation"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q8",
+      "type": "mcq",
+      "question": "What is the purpose of the 'range()' function in Python?",
+      "options": [
+        {
+          "id": "H1",
+          "text": "To generate a sequence of numbers.",
+          "isCorrect": true
+        },
+        {
+          "id": "H2",
+          "text": "To generate a sequence of characters.",
+          "isCorrect": false
+        },
+        {
+          "id": "H3",
+          "text": "To generate a sequence of strings.",
+          "isCorrect": false
+        },
+        {
+          "id": "H4",
+          "text": "To generate a sequence of lists.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "H1",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "functions",
+      "explanation": "In Python, the 'range()' function is used to generate a sequence of numbers.",
+      "tags": [
+        "functions",
+        "range()"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q9",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 % 2' in Python?",
+      "options": [
+        {
+          "id": "I1",
+          "text": "1",
+          "isCorrect": true
+        },
+        {
+          "id": "I2",
+          "text": "2",
+          "isCorrect": false
+        },
+        {
+          "id": "I3",
+          "text": "3",
+          "isCorrect": false
+        },
+        {
+          "id": "I4",
+          "text": "4",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "I1",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "operators",
+      "explanation": "In Python, the '%' operator is used for modulus operation. Therefore, '5 % 2' equals 1.",
+      "tags": [
+        "operators",
+        "modulus"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'del' statement in Python?",
+      "options": [
+        {
+          "id": "J1",
+          "text": "To delete a variable or an item from a list.",
+          "isCorrect": true
+        },
+        {
+          "id": "J2",
+          "text": "To delete a function or a class.",
+          "isCorrect": false
+        },
+        {
+          "id": "J3",
+          "text": "To delete a module or a package.",
+          "isCorrect": false
+        },
+        {
+          "id": "J4",
+          "text": "To delete a file or a directory.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "J1",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "list",
+      "explanation": "In Python, the 'del' statement can be used to delete a variable or an item from a list.",
+      "tags": [
+        "list",
+        "del"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00701",
+      "type": "mcq",
+      "question": "What is the primary difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lists are immutable, while tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "Tuples are immutable, while lists are mutable",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "Lists are used for numeric data, while tuples are used for string data",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "Tuples are used for numeric data, while lists are used for string data",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "Tuples are immutable, meaning their contents cannot be modified after creation, while lists are mutable, meaning their contents can be modified.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00702",
+      "type": "mcq",
+      "question": "What is the purpose of the 'return' statement in a Python function?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To exit the function and return control to the caller",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To declare a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To import a module",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To define a class",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'return' statement is used to exit a function and return control to the caller, optionally passing back a value.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00703",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 % 2' in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "3",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "1",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "text": "0",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "C",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The '%' operator in Python is the modulus operator, which returns the remainder of the division of the dividend by the divisor. In this case, 5 divided by 2 leaves a remainder of 1.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00704",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To get the length of a string or a list",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To get the type of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To get the index of a variable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'len()' function is used to get the length of a string or a list in Python.",
+      "tags": [
+        "list",
+        "string"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00705",
+      "type": "mcq",
+      "question": "What is the difference between the '==' and 'is' operators in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "'==' checks for equality, while 'is' checks for identity",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "'==' checks for identity, while 'is' checks for equality",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "Both '==' and 'is' check for equality",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "Both '==' and 'is' check for identity",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The '==' operator checks if the values of two variables are equal, while the 'is' operator checks if both variables refer to the same object in memory.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00706",
+      "type": "mcq",
+      "question": "What is the purpose of the 'type()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To get the type of a variable",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To get the length of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To get the index of a variable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'type()' function is used to get the type of a variable in Python.",
+      "tags": [
+        "type"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00707",
+      "type": "mcq",
+      "question": "What is the result of the expression '[1, 2, 3] + [4, 5, 6]' in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "[1, 2, 3, 4, 5, 6]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "[1, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "[4, 5, 6]",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "[7, 8, 9]",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The '+' operator is used to concatenate lists in Python.",
+      "tags": [
+        "list",
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00708",
+      "type": "mcq",
+      "question": "What is the purpose of the 'del' statement in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To delete a variable",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To create a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To modify a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To access a variable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'del' statement is used to delete a variable in Python.",
+      "tags": [
+        "variable"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00709",
+      "type": "mcq",
+      "question": "What is the result of the expression '(1, 2, 3) + (4, 5, 6)' in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1, 2, 3, 4, 5, 6)",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "(1, 2, 3)",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "(4, 5, 6)",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "(7, 8, 9)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The '+' operator is used to concatenate tuples in Python.",
+      "tags": [
+        "tuple",
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "BPY00710",
+      "type": "mcq",
+      "question": "What is the purpose of the 'help()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To get help on a module or a function",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To get the type of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To get the length of a variable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'help()' function is used to get help on a module or a function in Python.",
+      "tags": [
+        "help"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is the primary difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Lists are mutable, tuples are immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "Lists are immutable, tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "Lists can only contain integers, tuples can contain any data type",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "Tuples can only contain integers, lists can contain any data type",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "Lists are mutable, tuples are immutable",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, lists are mutable, meaning they can be modified after creation, whereas tuples are immutable, meaning they cannot be modified after creation.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'def' keyword in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To define a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To define a function",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To define a class",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To define a loop",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To define a function",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'def' keyword is used to define a function, which is a block of code that can be executed multiple times from different parts of a program.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is the result of the expression 5 + 3 * 2 in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "14",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "11",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "16",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "10",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "11",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression 5 + 3 * 2 is evaluated as follows: first, the multiplication 3 * 2 is evaluated, resulting in 6, then the addition 5 + 6 is evaluated, resulting in 11.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'in' operator in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To check if a value is in a list or tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To check if a value is not in a list or tuple",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To check if a value is in a dictionary",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To check if a value is not in a dictionary",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To check if a value is in a list or tuple",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'in' operator is used to check if a value is present in a list, tuple, or other iterable.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What is the result of the expression [1, 2, 3] + [4, 5, 6] in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "[1, 2, 3, 4, 5, 6]",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "[1, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "[4, 5, 6]",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "[7, 8, 9]",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "[1, 2, 3, 4, 5, 6]",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression [1, 2, 3] + [4, 5, 6] results in a new list that is the concatenation of the two lists.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To get the length of a list or tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To get the length of a string",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To get the length of a dictionary",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To get the length of a set",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To get the length of a list or tuple",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'len' function is used to get the number of elements in a list, tuple, or other iterable.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "What is the result of the expression (1, 2, 3) + (4, 5, 6) in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "(1, 2, 3, 4, 5, 6)",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "(1, 2, 3)",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "(4, 5, 6)",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "(7, 8, 9)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "(1, 2, 3, 4, 5, 6)",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression (1, 2, 3) + (4, 5, 6) results in a new tuple that is the concatenation of the two tuples.",
+      "tags": [
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "What is the purpose of the 'range' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To generate a sequence of numbers",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "To generate a sequence of characters",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "To generate a sequence of strings",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To generate a sequence of tuples",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To generate a sequence of numbers",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'range' function is used to generate a sequence of numbers, which can be used in loops or other contexts.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "What is the result of the expression [1, 2, 3] * 2 in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "[1, 2, 3, 1, 2, 3]",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "[1, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "[2, 4, 6]",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "[3, 6, 9]",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "[1, 2, 3, 1, 2, 3]",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression [1, 2, 3] * 2 results in a new list that is the concatenation of the original list with itself.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'zip' function in Python?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "To combine two lists into a single list",
+          "isCorrect": false
+        },
+        {
+          "id": "o2",
+          "text": "To combine two lists into a list of tuples",
+          "isCorrect": true
+        },
+        {
+          "id": "o3",
+          "text": "To combine two lists into a dictionary",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "To combine two lists into a set",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "To combine two lists into a list of tuples",
+      "points": 10,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'zip' function is used to combine two lists into a list of tuples, where each tuple contains one element from each list.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "PY001",
+      "type": "mcq",
+      "question": "What is the primary difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lists are mutable, tuples are immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "Lists are immutable, tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "Lists can only contain strings, tuples can contain any data type",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "Tuples can only contain integers, lists can contain any data type",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The primary difference between a list and a tuple in Python is that lists are mutable, meaning they can be modified after creation, while tuples are immutable, meaning they cannot be modified after creation.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY002",
+      "type": "mcq",
+      "question": "What is the purpose of the 'return' statement in a Python function?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To exit the function and return a value to the caller",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To enter the function and accept arguments",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To define a new variable within the function",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To print the output of the function",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'return' statement in a Python function is used to exit the function and return a value to the caller. This allows the function to provide output that can be used by other parts of the program.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY003",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 + 3 * 2' in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "14",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "16",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "20",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '5 + 3 * 2' is evaluated using the order of operations (PEMDAS). First, the multiplication is performed (3 * 2 = 6), and then the addition is performed (5 + 6 = 11).",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY004",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To get the length of a string or list",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To get the type of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To create a new list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'len()' function in Python is used to get the length of a string or list. It returns the number of items in the string or list.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY005",
+      "type": "mcq",
+      "question": "What is the difference between the 'and' and 'or' operators in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "'and' returns True if both conditions are True, 'or' returns True if either condition is True",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "'and' returns True if either condition is True, 'or' returns True if both conditions are True",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "'and' returns False if both conditions are False, 'or' returns False if either condition is False",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "'and' returns False if either condition is False, 'or' returns False if both conditions are False",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'and' operator in Python returns True if both conditions are True, while the 'or' operator returns True if either condition is True.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY006",
+      "type": "mcq",
+      "question": "What is the purpose of the 'range()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To create an iterator that generates a sequence of numbers",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To create a list of numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To create a tuple of numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To create a dictionary of numbers",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'range()' function in Python is used to create an iterator that generates a sequence of numbers. It is often used in loops to iterate over a range of numbers.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY007",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 % 3' in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "0",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "3",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '5 % 3' is evaluated using the modulus operator, which returns the remainder of the division of 5 by 3. In this case, 5 divided by 3 leaves a remainder of 2.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY008",
+      "type": "mcq",
+      "question": "What is the purpose of the 'del' statement in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To delete a variable or item from a list",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To create a new variable or item in a list",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To modify an existing variable or item in a list",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To print the value of a variable or item in a list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'del' statement in Python is used to delete a variable or item from a list. It can also be used to delete an entire list or other data structure.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY009",
+      "type": "mcq",
+      "question": "What is the result of the expression '[1, 2, 3] + [4, 5, 6]' in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "[1, 2, 3, 4, 5, 6]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "[1, 2, 3]",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "[4, 5, 6]",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "[7, 8, 9]",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the expression '[1, 2, 3] + [4, 5, 6]' is evaluated by concatenating the two lists together, resulting in a new list that contains all the elements from both lists.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "PY010",
+      "type": "mcq",
+      "question": "What is the purpose of the 'enumerate()' function in Python?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To iterate over a list and get both the index and value of each item",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To iterate over a list and get only the index of each item",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To iterate over a list and get only the value of each item",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To create a new list with the same elements as an existing list",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "The 'enumerate()' function in Python is used to iterate over a list and get both the index and value of each item. It returns an iterator that produces tuples containing the index and value of each item in the list.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What is the difference between a list and a tuple in Python?",
+      "options": [
+        {
+          "id": "A1",
+          "text": "Lists are immutable, tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "A2",
+          "text": "Lists are mutable, tuples are immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "A3",
+          "text": "Lists are mutable, tuples are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "A4",
+          "text": "Lists are immutable, tuples are immutable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A2",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, lists are mutable, meaning they can be modified after creation, while tuples are immutable, meaning they cannot be modified after creation.",
+      "tags": [
+        "list",
+        "tuple"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'def' keyword in Python?",
+      "options": [
+        {
+          "id": "B1",
+          "text": "To define a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "B2",
+          "text": "To define a function",
+          "isCorrect": true
+        },
+        {
+          "id": "B3",
+          "text": "To define a class",
+          "isCorrect": false
+        },
+        {
+          "id": "B4",
+          "text": "To define a module",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B2",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'def' keyword is used to define a function.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "question": "What is the difference between the '==' and 'is' operators in Python?",
+      "options": [
+        {
+          "id": "C1",
+          "text": "'==' checks for equality, 'is' checks for identity",
+          "isCorrect": true
+        },
+        {
+          "id": "C2",
+          "text": "'==' checks for identity, 'is' checks for equality",
+          "isCorrect": false
+        },
+        {
+          "id": "C3",
+          "text": "'==' checks for equality, 'is' checks for type",
+          "isCorrect": false
+        },
+        {
+          "id": "C4",
+          "text": "'==' checks for type, 'is' checks for equality",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "C1",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the '==' operator checks for equality, while the 'is' operator checks for identity.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'return' statement in a Python function?",
+      "options": [
+        {
+          "id": "D1",
+          "text": "To exit the function",
+          "isCorrect": false
+        },
+        {
+          "id": "D2",
+          "text": "To return a value from the function",
+          "isCorrect": true
+        },
+        {
+          "id": "D3",
+          "text": "To call another function",
+          "isCorrect": false
+        },
+        {
+          "id": "D4",
+          "text": "To define a variable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "D2",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'return' statement is used to return a value from a function.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "question": "What is the difference between a list and a string in Python?",
+      "options": [
+        {
+          "id": "E1",
+          "text": "Lists are immutable, strings are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "E2",
+          "text": "Lists are mutable, strings are immutable",
+          "isCorrect": true
+        },
+        {
+          "id": "E3",
+          "text": "Lists are mutable, strings are mutable",
+          "isCorrect": false
+        },
+        {
+          "id": "E4",
+          "text": "Lists are immutable, strings are immutable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "E2",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, lists are mutable, meaning they can be modified after creation, while strings are immutable, meaning they cannot be modified after creation.",
+      "tags": [
+        "list",
+        "string"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "question": "What is the purpose of the 'len()' function in Python?",
+      "options": [
+        {
+          "id": "F1",
+          "text": "To get the length of a list",
+          "isCorrect": true
+        },
+        {
+          "id": "F2",
+          "text": "To get the length of a string",
+          "isCorrect": true
+        },
+        {
+          "id": "F3",
+          "text": "To get the length of a tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "F4",
+          "text": "To get the length of a dictionary",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "F1",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'len()' function is used to get the length of a sequence, such as a list, string, or tuple.",
+      "tags": [
+        "functions"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "What is the difference between the 'and' and 'or' operators in Python?",
+      "options": [
+        {
+          "id": "G1",
+          "text": "'and' returns True if both conditions are true, 'or' returns True if either condition is true",
+          "isCorrect": true
+        },
+        {
+          "id": "G2",
+          "text": "'and' returns True if either condition is true, 'or' returns True if both conditions are true",
+          "isCorrect": false
+        },
+        {
+          "id": "G3",
+          "text": "'and' returns False if both conditions are true, 'or' returns False if either condition is true",
+          "isCorrect": false
+        },
+        {
+          "id": "G4",
+          "text": "'and' returns False if either condition is true, 'or' returns False if both conditions are true",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "G1",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'and' operator returns True if both conditions are true, while the 'or' operator returns True if either condition is true.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q8",
+      "type": "mcq",
+      "question": "What is the purpose of the 'in' operator in Python?",
+      "options": [
+        {
+          "id": "H1",
+          "text": "To check if a value is in a list",
+          "isCorrect": true
+        },
+        {
+          "id": "H2",
+          "text": "To check if a value is in a string",
+          "isCorrect": true
+        },
+        {
+          "id": "H3",
+          "text": "To check if a value is in a tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "H4",
+          "text": "To check if a value is in a dictionary",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "H1",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'in' operator is used to check if a value is in a sequence, such as a list, string, or tuple.",
+      "tags": [
+        "operators"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q9",
+      "type": "mcq",
+      "question": "What is the difference between the 'del' and 'remove' methods in Python?",
+      "options": [
+        {
+          "id": "I1",
+          "text": "'del' is used to delete an item from a list, 'remove' is used to remove an item from a list",
+          "isCorrect": true
+        },
+        {
+          "id": "I2",
+          "text": "'del' is used to remove an item from a list, 'remove' is used to delete an item from a list",
+          "isCorrect": false
+        },
+        {
+          "id": "I3",
+          "text": "'del' is used to delete an item from a dictionary, 'remove' is used to remove an item from a dictionary",
+          "isCorrect": false
+        },
+        {
+          "id": "I4",
+          "text": "'del' is used to remove an item from a dictionary, 'remove' is used to delete an item from a dictionary",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "I1",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'del' statement is used to delete an item from a list, while the 'remove' method is used to remove an item from a list.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    },
+    {
+      "id": "Q10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'index' method in Python?",
+      "options": [
+        {
+          "id": "J1",
+          "text": "To get the index of a value in a list",
+          "isCorrect": true
+        },
+        {
+          "id": "J2",
+          "text": "To get the index of a value in a string",
+          "isCorrect": true
+        },
+        {
+          "id": "J3",
+          "text": "To get the index of a value in a tuple",
+          "isCorrect": true
+        },
+        {
+          "id": "J4",
+          "text": "To get the index of a value in a dictionary",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "J1",
+      "points": 5,
+      "difficulty": "hard",
+      "category": "basic python",
+      "explanation": "In Python, the 'index' method is used to get the index of a value in a sequence, such as a list, string, or tuple.",
+      "tags": [
+        "list"
+      ],
+      "estimatedTime": 60
+    }
+  ],
+  "metadata": {
+    "totalQuestions": 100,
+    "topic": "basic python",
+    "averageDifficulty": "hard",
+    "generatedAt": "2026-05-22T16:39:48.172Z"
+  }
+}

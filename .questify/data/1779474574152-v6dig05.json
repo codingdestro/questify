@@ -1,0 +1,341 @@
+{
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What is the syntax to declare an array in Java?",
+      "options": [
+        {
+          "id": "A1",
+          "text": "int[] array;",
+          "isCorrect": true
+        },
+        {
+          "id": "A2",
+          "text": "int array[];",
+          "isCorrect": false
+        },
+        {
+          "id": "A3",
+          "text": "array int[];",
+          "isCorrect": false
+        },
+        {
+          "id": "A4",
+          "text": "int[] array()",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "In Java, arrays are declared using the syntax 'type[] variableName' or 'type variableName[]'.",
+      "tags": [
+        "arrays",
+        "declaration"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'length' property in Java arrays?",
+      "options": [
+        {
+          "id": "B1",
+          "text": "To get the maximum value in the array",
+          "isCorrect": false
+        },
+        {
+          "id": "B2",
+          "text": "To get the minimum value in the array",
+          "isCorrect": false
+        },
+        {
+          "id": "B3",
+          "text": "To get the number of elements in the array",
+          "isCorrect": true
+        },
+        {
+          "id": "B4",
+          "text": "To sort the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B3",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'length' property in Java arrays returns the number of elements in the array.",
+      "tags": [
+        "arrays",
+        "length"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "question": "Which of the following is a valid way to initialize a string in Java?",
+      "options": [
+        {
+          "id": "C1",
+          "text": "String str = new String();",
+          "isCorrect": true
+        },
+        {
+          "id": "C2",
+          "text": "String str = \"hello\";",
+          "isCorrect": true
+        },
+        {
+          "id": "C3",
+          "text": "String str = hello;",
+          "isCorrect": false
+        },
+        {
+          "id": "C4",
+          "text": "String str;",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "C1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "string",
+      "explanation": "In Java, strings can be initialized using the 'new' keyword or using string literals.",
+      "tags": [
+        "string",
+        "initialization"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'charAt' method in Java strings?",
+      "options": [
+        {
+          "id": "D1",
+          "text": "To get the length of the string",
+          "isCorrect": false
+        },
+        {
+          "id": "D2",
+          "text": "To get the character at a specific index",
+          "isCorrect": true
+        },
+        {
+          "id": "D3",
+          "text": "To convert the string to uppercase",
+          "isCorrect": false
+        },
+        {
+          "id": "D4",
+          "text": "To convert the string to lowercase",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "D2",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "string",
+      "explanation": "The 'charAt' method in Java strings returns the character at a specific index.",
+      "tags": [
+        "string",
+        "charAt"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "question": "How do you access an element in a Java array?",
+      "options": [
+        {
+          "id": "E1",
+          "text": "Using the 'get' method",
+          "isCorrect": false
+        },
+        {
+          "id": "E2",
+          "text": "Using the 'set' method",
+          "isCorrect": false
+        },
+        {
+          "id": "E3",
+          "text": "Using the array name followed by the index in square brackets",
+          "isCorrect": true
+        },
+        {
+          "id": "E4",
+          "text": "Using the array name followed by the index in parentheses",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "E3",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "In Java, you can access an element in an array by using the array name followed by the index in square brackets.",
+      "tags": [
+        "arrays",
+        "access"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "How do you declare a multidimensional array in Java?",
+      "options": [
+        {
+          "id": "G1",
+          "text": "int[] array[];",
+          "isCorrect": true
+        },
+        {
+          "id": "G2",
+          "text": "int array[][];",
+          "isCorrect": true
+        },
+        {
+          "id": "G3",
+          "text": "int[] array;",
+          "isCorrect": false
+        },
+        {
+          "id": "G4",
+          "text": "int array[];",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "G1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "In Java, multidimensional arrays can be declared using the syntax 'type[] variableName[]' or 'type variableName[][]'.",
+      "tags": [
+        "arrays",
+        "multidimensional"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q9",
+      "type": "mcq",
+      "question": "How do you initialize an array in Java?",
+      "options": [
+        {
+          "id": "I1",
+          "text": "Using the 'new' keyword",
+          "isCorrect": true
+        },
+        {
+          "id": "I2",
+          "text": "Using the 'init' method",
+          "isCorrect": false
+        },
+        {
+          "id": "I3",
+          "text": "Using the 'set' method",
+          "isCorrect": false
+        },
+        {
+          "id": "I4",
+          "text": "Using the 'get' method",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "I1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "In Java, arrays can be initialized using the 'new' keyword.",
+      "tags": [
+        "arrays",
+        "initialization"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "What is the result of using the '+=' operator on a String object in Java?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "It appends the new string and creates a new object",
+          "isCorrect": true
+        },
+        {
+          "id": "o2",
+          "text": "It appends the new string and modifies the existing object",
+          "isCorrect": false
+        },
+        {
+          "id": "o3",
+          "text": "It overwrites the existing string with the new string",
+          "isCorrect": false
+        },
+        {
+          "id": "o4",
+          "text": "It throws a runtime exception",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "It appends the new string and creates a new object",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic java",
+      "explanation": "In Java, using the '+=' operator on a String object creates a new String object and assigns it to the original variable, it does not modify the original String object.",
+      "tags": [
+        "string"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "How do you sort an array of integers in ascending order in Java?",
+      "options": [
+        {
+          "id": "o5",
+          "text": "Using the 'sort()' method from the Arrays class",
+          "isCorrect": true
+        },
+        {
+          "id": "o6",
+          "text": "Using a for loop and swapping elements manually",
+          "isCorrect": false
+        },
+        {
+          "id": "o7",
+          "text": "Using the 'Collections.sort()' method",
+          "isCorrect": false
+        },
+        {
+          "id": "o8",
+          "text": "Using a while loop and recursion",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "Using the 'sort()' method from the Arrays class",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic java",
+      "explanation": "In Java, you can use the 'sort()' method from the Arrays class to sort an array of integers in ascending order.",
+      "tags": [
+        "arrays"
+      ],
+      "estimatedTime": 30
+    }
+  ],
+  "metadata": {
+    "totalQuestions": 9,
+    "topic": "basic java",
+    "averageDifficulty": "easy",
+    "generatedAt": "2026-05-22T18:29:34.152Z"
+  }
+}

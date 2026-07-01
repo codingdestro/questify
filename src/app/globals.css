@@ -1,60 +1,60 @@
 @import "tailwindcss";
 
 @theme {
-  /* Fresh Mint Theme Colors */
+  /* Cool Blue / Sky Theme */
 
   /* Primary Colors */
-  --color-primary: teal;
-  --color-primary-50: #f0fdfa;
-  --color-primary-100: #ccfbf1;
-  --color-primary-200: #99f6e4;
-  --color-primary-300: #5eead4;
-  --color-primary-400: #2dd4bf;
-  --color-primary-500: #14b8a6;
-  --color-primary-600: #0d9488;
-  --color-primary-700: #0f766e;
-  --color-primary-800: #115e59;
-  --color-primary-900: #134e4a;
-  --color-primary-950: #042f2e;
+  --color-primary: #2563eb;
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a5f;
+  --color-primary-950: #172554;
 
-  /* Mint Accent Colors */
-  --color-mint-50: mintcream;
-  --color-mint-100: #e0f9f5;
-  --color-mint-200: lightcyan;
-  --color-mint-300: paleturquoise;
-  --color-mint-400: mediumturquoise;
-  --color-mint-500: #40e0d0;
-  --color-mint-600: teal;
-  --color-mint-700: darkcyan;
-  --color-mint-800: #006666;
-  --color-mint-900: #004d4d;
+  /* Sky Blue Accent Colors (replaces mint) */
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  --color-sky-900: #0c4a6e;
 
   /* Background Colors */
-  --color-background: mintcream;
-  --color-background-secondary: lightcyan;
+  --color-background: #f8fafc;
+  --color-background-secondary: #f1f5f9;
   --color-background-tertiary: white;
   --color-surface: white;
-  --color-surface-hover: azure;
+  --color-surface-hover: #f0f9ff;
 
   /* Text Colors */
-  --color-foreground: #1a202c;
-  --color-foreground-secondary: #2d3748;
-  --color-foreground-muted: #718096;
+  --color-foreground: #0f172a;
+  --color-foreground-secondary: #334155;
+  --color-foreground-muted: #64748b;
 
   /* Border Colors */
-  --color-border: paleturquoise;
-  --color-border-medium: mediumturquoise;
-  --color-border-strong: teal;
+  --color-border: #e2e8f0;
+  --color-border-medium: #cbd5e1;
+  --color-border-strong: #94a3b8;
 
   /* Status Colors */
-  --color-success: mediumseagreen;
-  --color-success-light: lightgreen;
-  --color-warning: goldenrod;
-  --color-warning-light: khaki;
-  --color-error: lightcoral;
-  --color-error-light: mistyrose;
-  --color-info: steelblue;
-  --color-info-light: lightblue;
+  --color-success: #16a34a;
+  --color-success-light: #dcfce7;
+  --color-warning: #d97706;
+  --color-warning-light: #fef3c7;
+  --color-error: #dc2626;
+  --color-error-light: #fee2e2;
+  --color-info: #2563eb;
+  --color-info-light: #dbeafe;
 
   /* Radius */
   --radius-sm: 0.25rem;
@@ -82,38 +82,38 @@
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 128 128 / 0.05);
-  --shadow: 0 4px 6px -1px rgb(0 128 128 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 128 128 / 0.1),
-    0 2px 4px -1px rgb(0 128 128 / 0.06);
-  --shadow-lg: 0 10px 15px -3px rgb(0 128 128 / 0.1),
-    0 4px 6px -2px rgb(0 128 128 / 0.05);
-  --shadow-xl: 0 20px 25px -5px rgb(0 128 128 / 0.1),
-    0 10px 10px -5px rgb(0 128 128 / 0.04);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 128 128 / 0.25);
+  /* Shadows — blue tint */
+  --shadow-sm: 0 1px 2px 0 rgb(37 99 235 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(37 99 235 / 0.08);
+  --shadow-md: 0 4px 6px -1px rgb(37 99 235 / 0.08),
+    0 2px 4px -1px rgb(37 99 235 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(37 99 235 / 0.08),
+    0 4px 6px -2px rgb(37 99 235 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(37 99 235 / 0.1),
+    0 10px 10px -5px rgb(37 99 235 / 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgb(37 99 235 / 0.25);
 }
 
 /* Custom utility classes using the theme */
 @layer utilities {
-  .bg-mint {
-    background-color: var(--color-mint-50);
+  .bg-sky {
+    background-color: var(--color-sky-50);
   }
 
-  .text-mint {
-    color: var(--color-mint-600);
+  .text-sky {
+    color: var(--color-sky-600);
   }
 
-  .border-mint {
+  .border-sky {
     border-color: var(--color-border);
   }
 
-  .shadow-mint {
+  .shadow-sky {
     box-shadow: var(--shadow-md);
   }
 }
 
-/* Example component styles */
+/* Component styles */
 @layer components {
   .btn-primary {
     background-color: var(--color-primary);
@@ -125,7 +125,7 @@
   }
 
   .btn-primary:hover {
-    background-color: var(--color-mint-700);
+    background-color: var(--color-primary-700);
     box-shadow: var(--shadow-md);
   }
 
@@ -145,37 +145,15 @@
 
 /* Loader Animations */
 @keyframes scale-in {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 @keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    transform: translateX(-4px);
-  }
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: translateX(4px);
-  }
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
 }
 
 .animate-scale-in {
@@ -187,15 +165,9 @@
 }
 
 @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .animate-gradient {

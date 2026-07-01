@@ -1,5 +1,5 @@
-import { ChatDeepSeek } from "@langchain/deepseek";
-export const llm = new ChatDeepSeek({
-  model: "deepseek-chat",
-  streaming: false,
+import { ChatGroq } from "@langchain/groq";
+export const llm = new ChatGroq({
+  model: "llama-3.3-70b-versatile",
+  streaming: true,
 });

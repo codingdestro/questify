@@ -1,16 +1,25 @@
 "use client";
 import { z } from "zod";
 import { inputScheme } from "@/types/mcq-question";
-import { useActionState } from "react";
-import axios from "axios";
-import StepLoading from "@/components/loader/step-loading";
+import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import StepLoading from "@/components/loader/step-loading";
+import { Sparkles, BookOpen, Layers, Brain, Users, X } from "lucide-react";
 type TInput = z.infer<typeof inputScheme>;
+
+type FormState = "idle" | "loading" | "error";
 
 export default function Page() {
   const redirect = useRouter();
-  const formHandler = async (state: TInput, formdata: FormData) => {
-    const formValues: any = {}; //eslint-disable-line
+  const [formState, setFormState] = useState<FormState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [batchProgress, setBatchProgress] = useState<{ done: number; total: number } | null>(null);
+
+  const formHandler = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formdata = new FormData(e.currentTarget);
+
+    const formValues: Record<string, unknown> = {};
     formdata.forEach((value, key) => {
       if (key === "subtopics" || key === "avoidTopics") {
         formValues[key] = (value as string).split(",").map((s) => s.trim());
@@ -23,111 +32,225 @@ export default function Page() {
 
     try {
       const parsedInput: TInput = inputScheme.parse(formValues);
-      const res = await axios.post("api/generate", parsedInput, {
-        headers: {
-          "Content-Type": "application/json",
-        },
+      setFormState("loading");
+      setBatchProgress(null);
+      setErrorMessage("");
+
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(parsedInput),
       });
-      const quizId = res.data;
-      redirect.push(`/sheet/${quizId}`);
+
+      if (!res.ok || !res.body) {
+        throw new Error("Failed to generate quiz");
+      }
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const text = decoder.decode(value, { stream: true });
+        buffer += text;
+
+        // Parse event lines
+        const batchMatch = buffer.match(/__BATCH_PROGRESS__:(\d+):(\d+)/);
+        if (batchMatch) {
+          setBatchProgress({ done: parseInt(batchMatch[1]), total: parseInt(batchMatch[2]) });
+        }
+      }
+
+      // Extract quiz ID from the last line
+      const quizIdMatch = buffer.match(/__QUIZ_ID__:(.+)$/m);
+      if (quizIdMatch) {
+        redirect.push(`/sheet/${quizIdMatch[1].trim()}`);
+      } else if (buffer.includes("__ERROR__")) {
+        const errMatch = buffer.match(/__ERROR__:(.+)/);
+        throw new Error(errMatch?.[1] || "Generation failed");
+      } else {
+        throw new Error("Failed to get quiz ID from stream");
+      }
     } catch (error) {
       console.log("Error generating questions:", error);
+      setFormState("error");
+      setErrorMessage(error instanceof Error ? error.message : "An error occurred");
     }
-    return state;
-  };
+  }, [redirect]);
 
-  const [state, formAction, ispending] = useActionState<TInput, FormData>(
-    formHandler,
-    {
-      topic: "",
-      subtopics: [],
-      numberOfQuestions: 5,
-      difficulty: "easy",
-      questionStyle: "recall",
-      targetAudience: "",
-      avoidTopics: [],
-      additionalContext: "",
-    }
-  );
+  const currentStep = !batchProgress
+    ? 0
+    : batchProgress.done < batchProgress.total
+    ? 1
+    : 2;
+
   return (
-    <main className="flex flex-col  py-5 items-center justify-center ">
-      {/* add a gradient heading */}
-      <h1 className="text-3xl font-bold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-        Create a Quiz
-      </h1>
-      <div className="border rounded-lg shadow-lg border-gray-200 mt-5 w-3xl">
-        {ispending ? (
-          <StepLoading autoAnimate={true} animationDuration={4000} />
-        ) : (
-          <form className="flex flex-col gap-4 p-4 " action={formAction}>
-            <input
-              type="text"
-              placeholder="Topic"
-              name="topic"
-              required
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+    <main className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 py-10 px-4">
+      <div className="max-w-3xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <Sparkles className="w-4 h-4" />
+            AI-Powered Generator
+          </div>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 bg-clip-text text-transparent">
+            Create a Quiz
+          </h1>
+          <p className="text-foreground-muted mt-2">
+            Fill in the details below and let AI generate your custom quiz
+          </p>
+        </div>
+
+        <div className="card-mint">
+          {formState === "loading" ? (
+            <StepLoading
+              autoAnimate={false}
+              currentStep={currentStep}
             />
-            <input
-              type="text"
-              placeholder="Subtopics (comma separated)"
-              name="subtopics"
-              required
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <input
-              type="number"
-              placeholder="Number of Questions"
-              required
-              name="numberOfQuestions"
-              defaultValue={state.numberOfQuestions}
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <select
-              name="difficulty"
-              required
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
-            >
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-            <select
-              name="questionStyle"
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
-            >
-              <option value="recall">Recall</option>
-              <option value="application">Application</option>
-              <option value="analysis">Analysis</option>
-              <option value="evaluation">Evaluation</option>
-            </select>
-            <input
-              type="text"
-              placeholder="Target Audience (e.g., high school students)"
-              required
-              name="targetAudience"
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <input
-              type="text"
-              placeholder="Avoid Topics (comma separated)"
-              name="avoidTopics"
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <textarea
-              placeholder="Additional Context"
-              name="additionalContext"
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[100px]"
-            ></textarea>
-            {/* create a classic button */}
-            <button
-              className="bg-blue-500 text-white rounded-lg py-2 px-4 cursor-pointer"
-              disabled={ispending}
-              type="submit"
-            >
-              {ispending ? "Generating..." : "Generate Questions"}
-            </button>
-          </form>
-        )}
+          ) : (
+            <form className="flex flex-col gap-5" onSubmit={formHandler}>
+              {/* Topic */}
+              <div>
+                <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
+                  <BookOpen className="w-4 h-4 inline mr-1.5 text-primary-500" />
+                  Topic
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g., React, Python, World History"
+                  name="topic"
+                  required
+                  className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground placeholder-foreground-muted/60"
+                />
+              </div>
+
+              {/* Subtopics */}
+              <div>
+                <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
+                  <Layers className="w-4 h-4 inline mr-1.5 text-primary-500" />
+                  Subtopics
+                </label>
+                <input
+                  type="text"
+                  placeholder="Comma separated (e.g., hooks, state, props)"
+                  name="subtopics"
+                  required
+                  className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground placeholder-foreground-muted/60"
+                />
+              </div>
+
+              {/* Number & Difficulty */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
+                    Number of Questions
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="5"
+                    required
+                    name="numberOfQuestions"
+                    defaultValue={5}
+                    min={1}
+                    max={100}
+                    className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
+                    Difficulty
+                  </label>
+                  <select
+                    name="difficulty"
+                    required
+                    defaultValue="easy"
+                    className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground"
+                  >
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Style & Audience */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
+                    <Brain className="w-4 h-4 inline mr-1.5 text-primary-500" />
+                    Question Style
+                  </label>
+                  <select
+                    name="questionStyle"
+                    defaultValue="recall"
+                    className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground"
+                  >
+                    <option value="recall">Recall</option>
+                    <option value="application">Application</option>
+                    <option value="analysis">Analysis</option>
+                    <option value="evaluation">Evaluation</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
+                    <Users className="w-4 h-4 inline mr-1.5 text-primary-500" />
+                    Target Audience
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g., high school students"
+                    required
+                    name="targetAudience"
+                    className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground placeholder-foreground-muted/60"
+                  />
+                </div>
+              </div>
+
+              {/* Avoid Topics */}
+              <div>
+                <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
+                  <X className="w-4 h-4 inline mr-1.5 text-primary-500" />
+                  Avoid Topics
+                </label>
+                <input
+                  type="text"
+                  placeholder="Comma separated topics to exclude"
+                  name="avoidTopics"
+                  className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground placeholder-foreground-muted/60"
+                />
+              </div>
+
+              {/* Additional Context */}
+              <div>
+                <label className="block text-sm font-semibold text-foreground-secondary mb-1.5">
+                  Additional Context
+                </label>
+                <textarea
+                  placeholder="Any specific requirements or context for the quiz"
+                  name="additionalContext"
+                  className="w-full border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-foreground placeholder-foreground-muted/60 resize-y min-h-[100px]"
+                />
+              </div>
+
+              {formState === "error" && (
+                <div className="bg-error-light text-error px-4 py-3 rounded-lg text-sm">
+                  {errorMessage}
+                </div>
+              )}
+
+              {/* Submit */}
+              <button
+                className="btn-primary w-full text-center cursor-pointer disabled:opacity-50"
+                type="submit"
+              >
+                ✨ Generate Questions
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     </main>
   );

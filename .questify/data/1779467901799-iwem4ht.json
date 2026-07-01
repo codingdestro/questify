@@ -1,0 +1,1860 @@
+{
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What is the purpose of the 'push' method in an array?",
+      "options": [
+        {
+          "id": "A1",
+          "text": "To remove the last element",
+          "isCorrect": false
+        },
+        {
+          "id": "A2",
+          "text": "To add a new element to the end",
+          "isCorrect": true
+        },
+        {
+          "id": "A3",
+          "text": "To sort the array in ascending order",
+          "isCorrect": false
+        },
+        {
+          "id": "A4",
+          "text": "To reverse the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A2",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'push' method is used to add one or more elements to the end of an array.",
+      "tags": [
+        "arrays",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "question": "What is the syntax to create a new object in JavaScript?",
+      "options": [
+        {
+          "id": "B1",
+          "text": "let obj = {};",
+          "isCorrect": true
+        },
+        {
+          "id": "B2",
+          "text": "let obj = [];",
+          "isCorrect": false
+        },
+        {
+          "id": "B3",
+          "text": "let obj = () => {};",
+          "isCorrect": false
+        },
+        {
+          "id": "B4",
+          "text": "let obj = function() {};",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "In JavaScript, objects are created using the object literal syntax, which is let obj = {}.",
+      "tags": [
+        "objects",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "question": "What is the purpose of the '+' operator in JavaScript?",
+      "options": [
+        {
+          "id": "C1",
+          "text": "To subtract two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "C2",
+          "text": "To multiply two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "C3",
+          "text": "To add two numbers or concatenate strings",
+          "isCorrect": true
+        },
+        {
+          "id": "C4",
+          "text": "To divide two numbers",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "C3",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The '+' operator is used for addition of numbers and concatenation of strings.",
+      "tags": [
+        "basic operator",
+        "arithmetic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "How do you access the first element of an array in JavaScript?",
+      "options": [
+        {
+          "id": "D1",
+          "text": "array[0]",
+          "isCorrect": true
+        },
+        {
+          "id": "D2",
+          "text": "array[1]",
+          "isCorrect": false
+        },
+        {
+          "id": "D3",
+          "text": "array.first()",
+          "isCorrect": false
+        },
+        {
+          "id": "D4",
+          "text": "array.getFirst()",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "D1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "In JavaScript, array indices start at 0, so the first element is accessed using array[0].",
+      "tags": [
+        "arrays",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "question": "What is the purpose of the 'length' property in an array?",
+      "options": [
+        {
+          "id": "E1",
+          "text": "To get the last element of the array",
+          "isCorrect": false
+        },
+        {
+          "id": "E2",
+          "text": "To get the number of elements in the array",
+          "isCorrect": true
+        },
+        {
+          "id": "E3",
+          "text": "To sort the array in ascending order",
+          "isCorrect": false
+        },
+        {
+          "id": "E4",
+          "text": "To reverse the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "E2",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'length' property returns the number of elements in an array.",
+      "tags": [
+        "arrays",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "question": "How do you create a new property in an object?",
+      "options": [
+        {
+          "id": "F1",
+          "text": "Using the 'new' keyword",
+          "isCorrect": false
+        },
+        {
+          "id": "F2",
+          "text": "Using the 'let' keyword",
+          "isCorrect": false
+        },
+        {
+          "id": "F3",
+          "text": "Using the 'obj.property = value' syntax",
+          "isCorrect": true
+        },
+        {
+          "id": "F4",
+          "text": "Using the 'obj.addProperty()' method",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "F3",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "In JavaScript, you can create a new property in an object using the obj.property = value syntax.",
+      "tags": [
+        "objects",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "What is the purpose of the '-' operator in JavaScript?",
+      "options": [
+        {
+          "id": "G1",
+          "text": "To add two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "G2",
+          "text": "To subtract two numbers",
+          "isCorrect": true
+        },
+        {
+          "id": "G3",
+          "text": "To multiply two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "G4",
+          "text": "To divide two numbers",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "G2",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The '-' operator is used for subtraction of numbers.",
+      "tags": [
+        "basic operator",
+        "arithmetic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q8",
+      "type": "mcq",
+      "question": "How do you remove the last element of an array?",
+      "options": [
+        {
+          "id": "H1",
+          "text": "Using the 'pop' method",
+          "isCorrect": true
+        },
+        {
+          "id": "H2",
+          "text": "Using the 'push' method",
+          "isCorrect": false
+        },
+        {
+          "id": "H3",
+          "text": "Using the 'shift' method",
+          "isCorrect": false
+        },
+        {
+          "id": "H4",
+          "text": "Using the 'unshift' method",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "H1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'pop' method removes the last element of an array.",
+      "tags": [
+        "arrays",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q9",
+      "type": "mcq",
+      "question": "What is the purpose of the '*' operator in JavaScript?",
+      "options": [
+        {
+          "id": "I1",
+          "text": "To add two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "I2",
+          "text": "To subtract two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "I3",
+          "text": "To multiply two numbers",
+          "isCorrect": true
+        },
+        {
+          "id": "I4",
+          "text": "To divide two numbers",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "I3",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The '*' operator is used for multiplication of numbers.",
+      "tags": [
+        "basic operator",
+        "arithmetic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q10",
+      "type": "mcq",
+      "question": "How do you access a property in an object?",
+      "options": [
+        {
+          "id": "J1",
+          "text": "Using the 'obj.property' syntax",
+          "isCorrect": true
+        },
+        {
+          "id": "J2",
+          "text": "Using the 'obj.getProperty()' method",
+          "isCorrect": false
+        },
+        {
+          "id": "J3",
+          "text": "Using the 'obj.get()' method",
+          "isCorrect": false
+        },
+        {
+          "id": "J4",
+          "text": "Using the 'obj.getPropertyName()' method",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "J1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "In JavaScript, you can access a property in an object using the obj.property syntax.",
+      "tags": [
+        "objects",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_1",
+      "type": "mcq",
+      "question": "What is the purpose of the 'push' method in JavaScript arrays?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To remove the last element",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "To add a new element to the end",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "To sort the array",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To reverse the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'push' method is used to add one or more elements to the end of an array.",
+      "tags": [
+        "arrays",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_2",
+      "type": "mcq",
+      "question": "What is the syntax to create a new object in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "let obj = {}",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "let obj = ()",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "let obj = []",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "let obj = =",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "In JavaScript, a new object can be created using the object literal syntax, which is 'let obj = {}'.",
+      "tags": [
+        "objects",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_3",
+      "type": "mcq",
+      "question": "What is the purpose of the '==' operator in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Strict equality check",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "Loose equality check",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "Assignment",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "Addition",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The '==' operator is used for loose equality checks, which means it checks for value equality but not type equality.",
+      "tags": [
+        "operators",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_4",
+      "type": "mcq",
+      "question": "How do you access the first element of a JavaScript array?",
+      "options": [
+        {
+          "id": "A",
+          "text": "arr[0]",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "arr(0)",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "arr.get(0)",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "arr.first()",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "In JavaScript, array elements are zero-indexed, meaning the first element is accessed using 'arr[0]'.",
+      "tags": [
+        "arrays",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_5",
+      "type": "mcq",
+      "question": "What is the purpose of the 'length' property in JavaScript arrays?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To get the index of the last element",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "To get the number of elements in the array",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "To sort the array",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To reverse the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'length' property returns the number of elements in an array.",
+      "tags": [
+        "arrays",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_6",
+      "type": "mcq",
+      "question": "What is the syntax to create a new property in a JavaScript object?",
+      "options": [
+        {
+          "id": "A",
+          "text": "obj.property = value",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "obj.property()",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "obj.property =",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "obj.property {}",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "In JavaScript, a new property can be created in an object using the dot notation or bracket notation, for example, 'obj.property = value'.",
+      "tags": [
+        "objects",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_7",
+      "type": "mcq",
+      "question": "What is the purpose of the '===' operator in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Loose equality check",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "Strict equality check",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "Assignment",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "Addition",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The '===' operator is used for strict equality checks, which means it checks for both value and type equality.",
+      "tags": [
+        "operators",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_8",
+      "type": "mcq",
+      "question": "How do you remove the last element of a JavaScript array?",
+      "options": [
+        {
+          "id": "A",
+          "text": "arr.pop()",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "arr.shift()",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "arr.splice()",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "arr.slice()",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'pop' method is used to remove the last element from an array.",
+      "tags": [
+        "arrays",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_9",
+      "type": "mcq",
+      "question": "What is the purpose of the 'delete' operator in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To delete a property from an object",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To delete an element from an array",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To delete a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To delete a function",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "The 'delete' operator is used to remove a property from an object.",
+      "tags": [
+        "objects",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "JS_BAS_10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'typeof' operator in JavaScript?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To get the type of a variable",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "To assign a value to a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "To compare two variables",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The 'typeof' operator is used to get the data type of a variable.",
+      "tags": [
+        "operators",
+        "basic"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What is the purpose of the 'length' property in a JavaScript array?",
+      "options": [
+        {
+          "id": "A1",
+          "text": "To get the index of the last element",
+          "isCorrect": false
+        },
+        {
+          "id": "A2",
+          "text": "To get the number of elements in the array",
+          "isCorrect": true
+        },
+        {
+          "id": "A3",
+          "text": "To remove the last element from the array",
+          "isCorrect": false
+        },
+        {
+          "id": "A4",
+          "text": "To add a new element to the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A2",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'length' property returns the number of elements in an array.",
+      "tags": [
+        "arrays",
+        "properties"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "question": "What is the syntax to create a new object in JavaScript?",
+      "options": [
+        {
+          "id": "B1",
+          "text": "let obj = {}",
+          "isCorrect": true
+        },
+        {
+          "id": "B2",
+          "text": "let obj = ()",
+          "isCorrect": false
+        },
+        {
+          "id": "B3",
+          "text": "let obj = []",
+          "isCorrect": false
+        },
+        {
+          "id": "B4",
+          "text": "let obj = new Object()",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "The syntax to create a new object in JavaScript is 'let obj = {}';",
+      "tags": [
+        "objects",
+        "syntax"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "question": "What is the purpose of the 'delete' operator in JavaScript?",
+      "options": [
+        {
+          "id": "C1",
+          "text": "To delete a property from an object",
+          "isCorrect": true
+        },
+        {
+          "id": "C2",
+          "text": "To delete a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "C3",
+          "text": "To delete a function",
+          "isCorrect": false
+        },
+        {
+          "id": "C4",
+          "text": "To delete an array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "C1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The 'delete' operator is used to delete a property from an object.",
+      "tags": [
+        "delete operator",
+        "objects"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'typeof' operator in JavaScript?",
+      "options": [
+        {
+          "id": "D1",
+          "text": "To get the type of a variable",
+          "isCorrect": true
+        },
+        {
+          "id": "D2",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D3",
+          "text": "To get the index of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "D4",
+          "text": "To get the length of a variable",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "D1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The 'typeof' operator returns the type of a variable.",
+      "tags": [
+        "typeof operator",
+        "variables"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "question": "What is the purpose of the 'push' method in a JavaScript array?",
+      "options": [
+        {
+          "id": "E1",
+          "text": "To add a new element to the end of the array",
+          "isCorrect": true
+        },
+        {
+          "id": "E2",
+          "text": "To remove the last element from the array",
+          "isCorrect": false
+        },
+        {
+          "id": "E3",
+          "text": "To get the index of the last element",
+          "isCorrect": false
+        },
+        {
+          "id": "E4",
+          "text": "To get the length of the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "E1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'push' method adds a new element to the end of the array.",
+      "tags": [
+        "push method",
+        "arrays"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "question": "What is the purpose of the 'Object.keys()' method in JavaScript?",
+      "options": [
+        {
+          "id": "F1",
+          "text": "To get an array of a given object's own enumerable property names",
+          "isCorrect": true
+        },
+        {
+          "id": "F2",
+          "text": "To get an array of a given object's own non-enumerable property names",
+          "isCorrect": false
+        },
+        {
+          "id": "F3",
+          "text": "To get an array of a given object's inherited property names",
+          "isCorrect": false
+        },
+        {
+          "id": "F4",
+          "text": "To get an array of a given object's methods",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "F1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "The 'Object.keys()' method returns an array of a given object's own enumerable property names.",
+      "tags": [
+        "Object.keys() method",
+        "objects"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "What is the purpose of the 'in' operator in JavaScript?",
+      "options": [
+        {
+          "id": "G1",
+          "text": "To check if a property exists in an object",
+          "isCorrect": true
+        },
+        {
+          "id": "G2",
+          "text": "To check if a variable exists in the scope",
+          "isCorrect": false
+        },
+        {
+          "id": "G3",
+          "text": "To check if a function exists in the scope",
+          "isCorrect": false
+        },
+        {
+          "id": "G4",
+          "text": "To check if an array exists in the scope",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "G1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The 'in' operator checks if a property exists in an object.",
+      "tags": [
+        "in operator",
+        "objects"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q8",
+      "type": "mcq",
+      "question": "What is the purpose of the 'for...in' loop in JavaScript?",
+      "options": [
+        {
+          "id": "H1",
+          "text": "To iterate over the properties of an object",
+          "isCorrect": true
+        },
+        {
+          "id": "H2",
+          "text": "To iterate over the elements of an array",
+          "isCorrect": false
+        },
+        {
+          "id": "H3",
+          "text": "To iterate over the properties of an array",
+          "isCorrect": false
+        },
+        {
+          "id": "H4",
+          "text": "To iterate over the elements of an object",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "H1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The 'for...in' loop iterates over the properties of an object.",
+      "tags": [
+        "for...in loop",
+        "objects"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q9",
+      "type": "mcq",
+      "question": "What is the purpose of the 'Array.prototype.indexOf()' method in JavaScript?",
+      "options": [
+        {
+          "id": "I1",
+          "text": "To get the index of the first occurrence of a specified value in an array",
+          "isCorrect": true
+        },
+        {
+          "id": "I2",
+          "text": "To get the index of the last occurrence of a specified value in an array",
+          "isCorrect": false
+        },
+        {
+          "id": "I3",
+          "text": "To get the length of an array",
+          "isCorrect": false
+        },
+        {
+          "id": "I4",
+          "text": "To get the value at a specified index in an array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "I1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'Array.prototype.indexOf()' method returns the index of the first occurrence of a specified value in an array.",
+      "tags": [
+        "Array.prototype.indexOf() method",
+        "arrays"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'Object.assign()' method in JavaScript?",
+      "options": [
+        {
+          "id": "J1",
+          "text": "To copy the values of all enumerable own properties from one or more source objects to a target object",
+          "isCorrect": true
+        },
+        {
+          "id": "J2",
+          "text": "To copy the values of all non-enumerable own properties from one or more source objects to a target object",
+          "isCorrect": false
+        },
+        {
+          "id": "J3",
+          "text": "To copy the values of all inherited properties from one or more source objects to a target object",
+          "isCorrect": false
+        },
+        {
+          "id": "J4",
+          "text": "To copy the values of all methods from one or more source objects to a target object",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "J1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "The 'Object.assign()' method copies the values of all enumerable own properties from one or more source objects to a target object.",
+      "tags": [
+        "Object.assign() method",
+        "objects"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What is the purpose of the 'length' property in a JavaScript array?",
+      "options": [
+        {
+          "id": "A1",
+          "text": "To get the index of the last element",
+          "isCorrect": false
+        },
+        {
+          "id": "A2",
+          "text": "To get the number of elements in the array",
+          "isCorrect": true
+        },
+        {
+          "id": "A3",
+          "text": "To get the data type of the elements",
+          "isCorrect": false
+        },
+        {
+          "id": "A4",
+          "text": "To get the first element of the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "A2",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'length' property in a JavaScript array returns the number of elements in the array.",
+      "tags": [
+        "arrays",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "question": "What is the syntax to create a new object in JavaScript?",
+      "options": [
+        {
+          "id": "B1",
+          "text": "let obj = {};",
+          "isCorrect": true
+        },
+        {
+          "id": "B2",
+          "text": "let obj = [];",
+          "isCorrect": false
+        },
+        {
+          "id": "B3",
+          "text": "let obj = () => {};",
+          "isCorrect": false
+        },
+        {
+          "id": "B4",
+          "text": "let obj = new Array();",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "B1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "In JavaScript, a new object can be created using the syntax 'let obj = {};'.",
+      "tags": [
+        "objects",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "question": "What is the purpose of the '+' operator in JavaScript?",
+      "options": [
+        {
+          "id": "C1",
+          "text": "To subtract two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "C2",
+          "text": "To multiply two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "C3",
+          "text": "To add two numbers or concatenate two strings",
+          "isCorrect": true
+        },
+        {
+          "id": "C4",
+          "text": "To divide two numbers",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "C3",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The '+' operator in JavaScript is used to add two numbers or concatenate two strings.",
+      "tags": [
+        "basic operator",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "How do you access the first element of a JavaScript array?",
+      "options": [
+        {
+          "id": "D1",
+          "text": "array[0]",
+          "isCorrect": true
+        },
+        {
+          "id": "D2",
+          "text": "array[1]",
+          "isCorrect": false
+        },
+        {
+          "id": "D3",
+          "text": "array[-1]",
+          "isCorrect": false
+        },
+        {
+          "id": "D4",
+          "text": "array[last]",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "D1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "In JavaScript, the first element of an array can be accessed using 'array[0]'.",
+      "tags": [
+        "arrays",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "question": "What is the purpose of the 'typeof' operator in JavaScript?",
+      "options": [
+        {
+          "id": "E1",
+          "text": "To get the value of a variable",
+          "isCorrect": false
+        },
+        {
+          "id": "E2",
+          "text": "To get the data type of a variable",
+          "isCorrect": true
+        },
+        {
+          "id": "E3",
+          "text": "To get the length of a string",
+          "isCorrect": false
+        },
+        {
+          "id": "E4",
+          "text": "To get the number of elements in an array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "E2",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The 'typeof' operator in JavaScript returns the data type of a variable.",
+      "tags": [
+        "basic operator",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "question": "How do you create a new property in a JavaScript object?",
+      "options": [
+        {
+          "id": "F1",
+          "text": "obj.property = value;",
+          "isCorrect": true
+        },
+        {
+          "id": "F2",
+          "text": "obj.property()",
+          "isCorrect": false
+        },
+        {
+          "id": "F3",
+          "text": "obj.property =",
+          "isCorrect": false
+        },
+        {
+          "id": "F4",
+          "text": "obj.newProperty",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "F1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "A new property in a JavaScript object can be created using 'obj.property = value;'.",
+      "tags": [
+        "objects",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "What is the purpose of the '==' operator in JavaScript?",
+      "options": [
+        {
+          "id": "G1",
+          "text": "To check if two values are equal",
+          "isCorrect": true
+        },
+        {
+          "id": "G2",
+          "text": "To check if two values are not equal",
+          "isCorrect": false
+        },
+        {
+          "id": "G3",
+          "text": "To check if two values are identical",
+          "isCorrect": false
+        },
+        {
+          "id": "G4",
+          "text": "To check if two values are not identical",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "G1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The '==' operator in JavaScript checks if two values are equal.",
+      "tags": [
+        "basic operator",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q8",
+      "type": "mcq",
+      "question": "How do you check if a property exists in a JavaScript object?",
+      "options": [
+        {
+          "id": "H1",
+          "text": "if (obj.property) {}",
+          "isCorrect": true
+        },
+        {
+          "id": "H2",
+          "text": "if (obj.property == undefined) {}",
+          "isCorrect": false
+        },
+        {
+          "id": "H3",
+          "text": "if (obj.property !== undefined) {}",
+          "isCorrect": false
+        },
+        {
+          "id": "H4",
+          "text": "if (obj.property === null) {}",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "H1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "A property in a JavaScript object can be checked using 'if (obj.property) {}'.",
+      "tags": [
+        "objects",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q9",
+      "type": "mcq",
+      "question": "What is the purpose of the '!' operator in JavaScript?",
+      "options": [
+        {
+          "id": "I1",
+          "text": "To negate a boolean value",
+          "isCorrect": true
+        },
+        {
+          "id": "I2",
+          "text": "To add two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "I3",
+          "text": "To subtract two numbers",
+          "isCorrect": false
+        },
+        {
+          "id": "I4",
+          "text": "To multiply two numbers",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "I1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The '!' operator in JavaScript is used to negate a boolean value.",
+      "tags": [
+        "basic operator",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "Q10",
+      "type": "mcq",
+      "question": "How do you remove the last element from a JavaScript array?",
+      "options": [
+        {
+          "id": "J1",
+          "text": "array.pop()",
+          "isCorrect": true
+        },
+        {
+          "id": "J2",
+          "text": "array.shift()",
+          "isCorrect": false
+        },
+        {
+          "id": "J3",
+          "text": "array.slice()",
+          "isCorrect": false
+        },
+        {
+          "id": "J4",
+          "text": "array.splice()",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "J1",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The last element from a JavaScript array can be removed using 'array.pop()'.",
+      "tags": [
+        "arrays",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is the purpose of the 'length' property in a JavaScript array?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To get the index of the last element",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To get the number of elements in the array",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To sort the elements in the array",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To reverse the order of the elements in the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'length' property in a JavaScript array returns the number of elements in the array.",
+      "tags": [
+        "arrays",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the result of the expression '2 + 2' in JavaScript?",
+      "options": [
+        {
+          "id": "a",
+          "text": "4",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "5",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "6",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "8",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The expression '2 + 2' evaluates to 4 in JavaScript.",
+      "tags": [
+        "javascript",
+        "basic operator"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "How do you create a new object in JavaScript?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Using the 'new' keyword",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Using the 'create' method",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Using the 'object' function",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Using the 'init' method",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "You can create a new object in JavaScript using the 'new' keyword or the object literal syntax.",
+      "tags": [
+        "javascript",
+        "objects"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the purpose of the 'push' method in a JavaScript array?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To remove the last element from the array",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To add a new element to the end of the array",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To sort the elements in the array",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To reverse the order of the elements in the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'push' method in a JavaScript array adds a new element to the end of the array.",
+      "tags": [
+        "arrays",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What is the result of the expression '5 - 3' in JavaScript?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "2",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "3",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "5",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The expression '5 - 3' evaluates to 2 in JavaScript.",
+      "tags": [
+        "javascript",
+        "basic operator"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "How do you access a property in a JavaScript object?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Using the 'get' method",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Using the 'access' method",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Using the dot notation or bracket notation",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Using the 'property' method",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "objects",
+      "explanation": "You can access a property in a JavaScript object using the dot notation or bracket notation.",
+      "tags": [
+        "javascript",
+        "objects"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "question": "What is the purpose of the 'indexOf' method in a JavaScript array?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To get the index of the first occurrence of a specified element",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To get the index of the last occurrence of a specified element",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To sort the elements in the array",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To reverse the order of the elements in the array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "The 'indexOf' method in a JavaScript array returns the index of the first occurrence of a specified element.",
+      "tags": [
+        "arrays",
+        "javascript"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "question": "What is the result of the expression '7 * 2' in JavaScript?",
+      "options": [
+        {
+          "id": "a",
+          "text": "12",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "14",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "15",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "16",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The expression '7 * 2' evaluates to 14 in JavaScript.",
+      "tags": [
+        "javascript",
+        "basic operator"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "How do you create a new array in JavaScript?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Using the 'new' keyword",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Using the 'create' method",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Using the 'array' function",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Using the 'init' method",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "arrays",
+      "explanation": "You can create a new array in JavaScript using the 'new' keyword or the array literal syntax.",
+      "tags": [
+        "javascript",
+        "arrays"
+      ],
+      "estimatedTime": 30
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "question": "What is the purpose of the 'delete' operator in JavaScript?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To delete a property from an object",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To delete an element from an array",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To sort the elements in an array",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To reverse the order of the elements in an array",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a",
+      "points": 1,
+      "difficulty": "easy",
+      "category": "basic operator",
+      "explanation": "The 'delete' operator in JavaScript deletes a property from an object.",
+      "tags": [
+        "javascript",
+        "basic operator"
+      ],
+      "estimatedTime": 30
+    }
+  ],
+  "metadata": {
+    "totalQuestions": 50,
+    "topic": "Basic Javascript",
+    "averageDifficulty": "easy",
+    "generatedAt": "2026-05-22T16:38:21.799Z"
+  }
+}
