@@ -37,3 +37,12 @@ export const outputScheme = z.object({
     totalQuestions: z.number(),
   }),
 });
+
+export const quizDocumentScheme = outputScheme.extend({
+  metadata: z.object({
+    totalQuestions: z.number(),
+    topic: z.string(),
+    averageDifficulty: z.string(),
+    generatedAt: z.string(),
+  }).passthrough(),
+});

@@ -36,12 +36,6 @@ export default function Page() {
             >
               Generate Your First Quiz <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link
-              href="/demo"
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary-400 text-primary-600 rounded-xl text-lg font-semibold hover:bg-sky-50 transition-all"
-            >
-              See How It Works
-            </Link>
           </div>
         </section>
 

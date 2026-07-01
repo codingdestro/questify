@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav className="flex items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-linear-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent"
           >
             Questify
           </Link>
@@ -19,10 +19,7 @@ const Navbar = () => {
             >
               Get Started
             </Link>
-            <Link
-              href="/create"
-              className="btn-primary text-sm"
-            >
+            <Link href="/create" className="btn-primary text-sm">
               Create Quiz
             </Link>
           </div>

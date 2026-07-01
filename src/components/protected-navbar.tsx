@@ -4,8 +4,6 @@ import Link from "next/link";
 const LINKS = [
   { href: "/home", label: "Home" },
   { href: "/create", label: "Create Quiz" },
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/settings", label: "Settings" },
 ];
 
 const Navbar = () => {
@@ -15,7 +13,7 @@ const Navbar = () => {
         <nav className="flex items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-linear-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent"
           >
             Questify
           </Link>

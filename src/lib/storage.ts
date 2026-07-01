@@ -1,36 +1,41 @@
-import fs from "fs";
-import path from "path";
+import { db } from "./firebase";
+import { collection, doc, setDoc, getDoc as firestoreGetDoc, getDocs } from "firebase/firestore";
+import { quizDocumentScheme } from "@/types/mcq-question";
 
-const DATA_DIR = path.join(process.cwd(), ".questify", "data");
-
-function ensureDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
+export async function saveDoc(id: string, data: unknown): Promise<void> {
+  // Validate data with Zod schema before saving
+  const validated = quizDocumentScheme.parse(data);
+  const docRef = doc(db, "quizzes", id);
+  await setDoc(docRef, validated);
 }
 
-function filePath(id: string): string {
-  return path.join(DATA_DIR, `${id}.json`);
+export async function getDoc<T>(id: string): Promise<T | null> {
+  const docRef = doc(db, "quizzes", id);
+  const docSnap = await firestoreGetDoc(docRef);
+  if (!docSnap.exists()) return null;
+  
+  const data = docSnap.data();
+  // Validate data with Zod schema after retrieving
+  const validated = quizDocumentScheme.parse(data);
+  return validated as unknown as T;
 }
 
-export function saveDoc(id: string, data: unknown): void {
-  ensureDir();
-  fs.writeFileSync(filePath(id), JSON.stringify(data, null, 2), "utf-8");
-}
-
-export function getDoc<T>(id: string): T | null {
-  const fp = filePath(id);
-  if (!fs.existsSync(fp)) return null;
-  return JSON.parse(fs.readFileSync(fp, "utf-8")) as T;
-}
-
-export function getAllDocs<T>(): Array<{ id: string; data: T }> {
-  ensureDir();
-  const files = fs.readdirSync(DATA_DIR).filter((f) => f.endsWith(".json"));
-  return files.map((f) => {
-    const id = f.replace(/\.json$/, "");
-    return { id, data: JSON.parse(fs.readFileSync(path.join(DATA_DIR, f), "utf-8")) as T };
+export async function getAllDocs<T>(): Promise<Array<{ id: string; data: T }>> {
+  const querySnapshot = await getDocs(collection(db, "quizzes"));
+  const docs: Array<{ id: string; data: T }> = [];
+  querySnapshot.forEach((docSnap) => {
+    const data = docSnap.data();
+    const parsed = quizDocumentScheme.safeParse(data);
+    if (parsed.success) {
+      docs.push({
+        id: docSnap.id,
+        data: parsed.data as unknown as T,
+      });
+    } else {
+      console.warn(`Quiz document ${docSnap.id} failed Zod validation:`, parsed.error);
+    }
   });
+  return docs;
 }
 
 export function generateId(): string {

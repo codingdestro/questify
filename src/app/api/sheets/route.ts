@@ -18,7 +18,7 @@ export async function GET(req: Request) {
 
     if (!id) {
       // fetch all documents
-      const allDocs = getAllDocs<{
+      const allDocs = await getAllDocs<{
         metadata?: {
           totalQuestions?: number;
           topic?: string;
@@ -39,7 +39,7 @@ export async function GET(req: Request) {
 
     // single document lookup
     const { getDoc } = await import("@/lib/storage");
-    const doc = getDoc<Record<string, unknown>>(id);
+    const doc = await getDoc<Record<string, unknown>>(id);
     if (doc) {
       return new Response(JSON.stringify({ ...doc, id }), { status: 200 });
     } else {

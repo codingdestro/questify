@@ -19,7 +19,7 @@ export async function saveQuestion(
         generatedAt: new Date().toISOString(),
       },
     };
-    saveDoc(id, data);
+    await saveDoc(id, data);
     return id;
   } catch (e) {
     console.error("Error saving document: ", e);
